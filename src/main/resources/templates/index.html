@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gradle + Webpack Demo</title>
+    <meta name="traceparent" th:content="${traceparent}">
+</head>
+<body>
+<script src="/js/bundle.js"></script>
+<br/>
+<button id="btnAdd" class="btnAddClass">Add button</button>
+<div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="buttons"></div>
+    <div></div>
+</div>
+<br/>
+
+<div class="periodic-table">
+</div>
+
+<p th:text="${traceparent}">xxx</p>
+</body>
+</html>
