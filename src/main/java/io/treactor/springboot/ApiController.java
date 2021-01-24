@@ -3,8 +3,11 @@ package io.treactor.springboot;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
-import io.treactor.proto.Treactor.Result;
-import io.treactor.proto.Treactor.Result.Builder;
+import io.treactor.springboot.Elements.Element;
+import io.treactor.v1alpha.AtomOuterClass.Atom;
+import io.treactor.v1alpha.NodeOuterClass.Node;
+import io.treactor.v1alpha.NodeOuterClass.Node.Builder;
+import io.treactor.v1alpha.NodeOuterClass.TReactorRequest;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -56,11 +59,12 @@ public class ApiController {
   }
 
   @GetMapping("/atom/{atom}")
-  public Result atom(
+  public Node atom(
       @RequestHeader MultiValueMap<String, String> headers,
       Model model,
       @PathVariable("atom") String atom,
       @RequestParam("symbol") String symbol) {
+    Config config = Config.instance;
     Span span =
         tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(Span.Kind.INTERNAL).startSpan();
     try {
@@ -71,15 +75,60 @@ public class ApiController {
     span.addEvent("Done sleeping for 500");
     span.end();
 
-    Builder result = Result.newBuilder();
+    Element element = Elements.instance().bySymbol(symbol);
 
+    TReactorRequest.Builder trRequest = TReactorRequest.newBuilder();
     headers.forEach(
         (key, value) -> {
-          result.putHeaders(key, value.stream().collect(Collectors.joining("|")));
+          trRequest.putHeaders(key, value.stream().collect(Collectors.joining("|")));
         });
 
-    result.setName("foobar");
+    Builder result =
+        Node.newBuilder()
+            .setName(config.getServiceName())
+            .setVersion(config.getServiceVersion())
+            .setFramework(config.getFramework())
+            .setRequest(trRequest)
+            .setAtom(
+                Atom.newBuilder()
+                    .setName(element.element)
+                    .setNumber(element.number)
+                    .setSymbol(element.symbol)
+                    .setGroup(element.group)
+                    .setPeriod(element.period)
+                    .build());
+    return result.build();
+  }
 
+  @GetMapping("/about/{number}")
+  public Node about(
+      @RequestHeader MultiValueMap<String, String> headers,
+      Model model,
+      @PathVariable("number") String number) {
+    Config config = Config.instance;
+
+    Element element = Elements.instance().byNumber(number);
+
+    TReactorRequest.Builder trRequest = TReactorRequest.newBuilder();
+    headers.forEach(
+        (key, value) -> {
+          trRequest.putHeaders(key, value.stream().collect(Collectors.joining("|")));
+        });
+
+    Builder result =
+        Node.newBuilder()
+            .setName(config.getServiceName())
+            .setVersion(config.getServiceVersion())
+            .setFramework(config.getFramework())
+            .setRequest(trRequest)
+            .setAtom(
+                Atom.newBuilder()
+                    .setName(element.element)
+                    .setNumber(element.number)
+                    .setSymbol(element.symbol)
+                    .setGroup(element.group)
+                    .setPeriod(element.period)
+                    .build());
     return result.build();
   }
 }
