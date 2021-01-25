@@ -86,7 +86,7 @@ jib {
     to {
         image = 'gcr.io/treactor/treactor-java'
         credHelper = 'osxkeychain'
-        tags = ['0.1.0','latest']
+        tags = ['0.1.1']
     }
     container {
         jvmFlags = ['-javaagent:/app/otel-javaagent.jar',
