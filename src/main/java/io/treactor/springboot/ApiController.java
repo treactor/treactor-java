@@ -34,11 +34,6 @@ public class ApiController {
   public String split(Model model) {
     Span span =
         tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(Span.Kind.INTERNAL).startSpan();
-    try {
-      Thread.sleep(500);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
     span.addEvent("Done sleeping for 500");
     span.end();
     return "{}";
@@ -48,11 +43,6 @@ public class ApiController {
   public String orbit(Model model) {
     Span span =
         tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(Span.Kind.INTERNAL).startSpan();
-    try {
-      Thread.sleep(500);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
     span.addEvent("Done sleeping for 500");
     span.end();
     return "{}";
