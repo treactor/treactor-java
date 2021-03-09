@@ -12,7 +12,9 @@ group = 'io.treactor'
 version = '0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-def otel = '0.13.1'
+def otelapi = '1.0.0'
+def otelsdk = '1.0.0'
+def otelagent = '1.0.0'
 
 repositories {
     jcenter()
@@ -33,13 +35,13 @@ dependencies {
     compile "io.grpc:grpc-stub:1.34.1"
     runtime "com.google.protobuf:protobuf-java:3.14.0"
     runtime "com.google.protobuf:protobuf-java-util:3.14.0"
-    compile "io.opentelemetry:opentelemetry-api:0.13.1"
-    compile "io.opentelemetry:opentelemetry-sdk:0.13.1"
+    compile "io.opentelemetry:opentelemetry-api:$otelapi"
+    compile "io.opentelemetry:opentelemetry-sdk:$otelsdk"
 
-    runtime "io.opentelemetry:opentelemetry-exporter-otlp:$otel"
-    runtime "io.opentelemetry:opentelemetry-exporter-prometheus:$otel"
-    compile "io.opentelemetry:opentelemetry-sdk-extension-zpages:$otel"
-    agent "io.opentelemetry.javaagent:opentelemetry-javaagent:$otel:all"
+    runtime "io.opentelemetry:opentelemetry-exporter-otlp:$otelsdk"
+    runtime "io.opentelemetry:opentelemetry-exporter-prometheus:1.0.0-alpha"
+    compile "io.opentelemetry:opentelemetry-sdk-extension-zpages:1.0.0-alpha"
+    agent "io.opentelemetry.javaagent:opentelemetry-javaagent:$otelagent:all"
 
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
@@ -86,7 +88,7 @@ jib {
     to {
         image = 'gcr.io/treactor/treactor-java'
         credHelper = 'osxkeychain'
-        tags = ['0.1.1']
+        tags = ['0.1.3']
     }
     container {
         jvmFlags = ['-javaagent:/app/otel-javaagent.jar',

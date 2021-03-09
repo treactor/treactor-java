@@ -2,7 +2,6 @@ package io.treactor.springboot;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -55,7 +54,9 @@ public class Elements {
   public Elements() {
     ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
     try {
-      ElementsFile elements = mapper.readValue( getClass().getClassLoader().getResourceAsStream("elements.yaml"), ElementsFile.class);
+      ElementsFile elements =
+          mapper.readValue(
+              getClass().getClassLoader().getResourceAsStream("elements.yaml"), ElementsFile.class);
       for (Element element : elements.elements) {
         elementsByNumber.put(String.valueOf(element.number), element);
         elementsBySymbol.put(element.symbol, element);
