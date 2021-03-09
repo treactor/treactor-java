@@ -5,83 +5,88 @@ package io.treactor.v1alpha;
 
 public final class AtomOuterClass {
   private AtomOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface AtomOrBuilder extends
+  public interface AtomOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:Atom)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int32 number = 1;</code>
+     *
      * @return The number.
      */
     int getNumber();
 
     /**
      * <code>string symbol = 2;</code>
+     *
      * @return The symbol.
      */
     java.lang.String getSymbol();
     /**
      * <code>string symbol = 2;</code>
+     *
      * @return The bytes for symbol.
      */
-    com.google.protobuf.ByteString
-        getSymbolBytes();
+    com.google.protobuf.ByteString getSymbolBytes();
 
     /**
      * <code>string name = 3;</code>
+     *
      * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 3;</code>
+     *
      * @return The bytes for name.
      */
-    com.google.protobuf.ByteString
-        getNameBytes();
+    com.google.protobuf.ByteString getNameBytes();
 
     /**
      * <code>int32 period = 4;</code>
+     *
      * @return Whether the period field is set.
      */
     boolean hasPeriod();
     /**
      * <code>int32 period = 4;</code>
+     *
      * @return The period.
      */
     int getPeriod();
 
     /**
      * <code>int32 group = 5;</code>
+     *
      * @return Whether the group field is set.
      */
     boolean hasGroup();
     /**
      * <code>int32 group = 5;</code>
+     *
      * @return The group.
      */
     int getGroup();
   }
-  /**
-   * Protobuf type {@code Atom}
-   */
-  public static final class Atom extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code Atom} */
+  public static final class Atom extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:Atom)
       AtomOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Atom.newBuilder() to construct.
     private Atom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Atom() {
       symbol_ = "";
       name_ = "";
@@ -89,16 +94,15 @@ public final class AtomOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Atom();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Atom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -118,54 +122,57 @@ public final class AtomOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              number_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              symbol_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000001;
-              period_ = input.readInt32();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000002;
-              group_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 8:
+              {
+                number_ = input.readInt32();
+                break;
               }
-              break;
-            }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                symbol_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            case 32:
+              {
+                bitField0_ |= 0x00000001;
+                period_ = input.readInt32();
+                break;
+              }
+            case 40:
+              {
+                bitField0_ |= 0x00000002;
+                group_ = input.readInt32();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.treactor.v1alpha.AtomOuterClass.internal_static_Atom_descriptor;
     }
 
@@ -174,7 +181,8 @@ public final class AtomOuterClass {
         internalGetFieldAccessorTable() {
       return io.treactor.v1alpha.AtomOuterClass.internal_static_Atom_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.treactor.v1alpha.AtomOuterClass.Atom.class, io.treactor.v1alpha.AtomOuterClass.Atom.Builder.class);
+              io.treactor.v1alpha.AtomOuterClass.Atom.class,
+              io.treactor.v1alpha.AtomOuterClass.Atom.Builder.class);
     }
 
     private int bitField0_;
@@ -182,6 +190,7 @@ public final class AtomOuterClass {
     private int number_;
     /**
      * <code>int32 number = 1;</code>
+     *
      * @return The number.
      */
     @java.lang.Override
@@ -193,6 +202,7 @@ public final class AtomOuterClass {
     private volatile java.lang.Object symbol_;
     /**
      * <code>string symbol = 2;</code>
+     *
      * @return The symbol.
      */
     @java.lang.Override
@@ -201,8 +211,7 @@ public final class AtomOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         symbol_ = s;
         return s;
@@ -210,16 +219,15 @@ public final class AtomOuterClass {
     }
     /**
      * <code>string symbol = 2;</code>
+     *
      * @return The bytes for symbol.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSymbolBytes() {
+    public com.google.protobuf.ByteString getSymbolBytes() {
       java.lang.Object ref = symbol_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         symbol_ = b;
         return b;
       } else {
@@ -231,6 +239,7 @@ public final class AtomOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 3;</code>
+     *
      * @return The name.
      */
     @java.lang.Override
@@ -239,8 +248,7 @@ public final class AtomOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -248,16 +256,15 @@ public final class AtomOuterClass {
     }
     /**
      * <code>string name = 3;</code>
+     *
      * @return The bytes for name.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -269,6 +276,7 @@ public final class AtomOuterClass {
     private int period_;
     /**
      * <code>int32 period = 4;</code>
+     *
      * @return Whether the period field is set.
      */
     @java.lang.Override
@@ -277,6 +285,7 @@ public final class AtomOuterClass {
     }
     /**
      * <code>int32 period = 4;</code>
+     *
      * @return The period.
      */
     @java.lang.Override
@@ -288,6 +297,7 @@ public final class AtomOuterClass {
     private int group_;
     /**
      * <code>int32 group = 5;</code>
+     *
      * @return Whether the group field is set.
      */
     @java.lang.Override
@@ -296,6 +306,7 @@ public final class AtomOuterClass {
     }
     /**
      * <code>int32 group = 5;</code>
+     *
      * @return The group.
      */
     @java.lang.Override
@@ -304,6 +315,7 @@ public final class AtomOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -315,8 +327,7 @@ public final class AtomOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (number_ != 0) {
         output.writeInt32(1, number_);
       }
@@ -342,8 +353,7 @@ public final class AtomOuterClass {
 
       size = 0;
       if (number_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, number_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, number_);
       }
       if (!getSymbolBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, symbol_);
@@ -352,12 +362,10 @@ public final class AtomOuterClass {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, period_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, period_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, group_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, group_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -367,28 +375,23 @@ public final class AtomOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.treactor.v1alpha.AtomOuterClass.Atom)) {
         return super.equals(obj);
       }
       io.treactor.v1alpha.AtomOuterClass.Atom other = (io.treactor.v1alpha.AtomOuterClass.Atom) obj;
 
-      if (getNumber()
-          != other.getNumber()) return false;
-      if (!getSymbol()
-          .equals(other.getSymbol())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (getNumber() != other.getNumber()) return false;
+      if (!getSymbol().equals(other.getSymbol())) return false;
+      if (!getName().equals(other.getName())) return false;
       if (hasPeriod() != other.hasPeriod()) return false;
       if (hasPeriod()) {
-        if (getPeriod()
-            != other.getPeriod()) return false;
+        if (getPeriod() != other.getPeriod()) return false;
       }
       if (hasGroup() != other.hasGroup()) return false;
       if (hasGroup()) {
-        if (getGroup()
-            != other.getGroup()) return false;
+        if (getGroup() != other.getGroup()) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -420,88 +423,94 @@ public final class AtomOuterClass {
       return hash;
     }
 
-    public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.treactor.v1alpha.AtomOuterClass.Atom parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.treactor.v1alpha.AtomOuterClass.Atom parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.AtomOuterClass.Atom parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.treactor.v1alpha.AtomOuterClass.Atom prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -510,15 +519,13 @@ public final class AtomOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code Atom}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code Atom} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:Atom)
         io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return io.treactor.v1alpha.AtomOuterClass.internal_static_Atom_descriptor;
       }
 
@@ -527,7 +534,8 @@ public final class AtomOuterClass {
           internalGetFieldAccessorTable() {
         return io.treactor.v1alpha.AtomOuterClass.internal_static_Atom_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.treactor.v1alpha.AtomOuterClass.Atom.class, io.treactor.v1alpha.AtomOuterClass.Atom.Builder.class);
+                io.treactor.v1alpha.AtomOuterClass.Atom.class,
+                io.treactor.v1alpha.AtomOuterClass.Atom.Builder.class);
       }
 
       // Construct using io.treactor.v1alpha.AtomOuterClass.Atom.newBuilder()
@@ -535,16 +543,15 @@ public final class AtomOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -562,8 +569,7 @@ public final class AtomOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return io.treactor.v1alpha.AtomOuterClass.internal_static_Atom_descriptor;
       }
 
@@ -583,7 +589,8 @@ public final class AtomOuterClass {
 
       @java.lang.Override
       public io.treactor.v1alpha.AtomOuterClass.Atom buildPartial() {
-        io.treactor.v1alpha.AtomOuterClass.Atom result = new io.treactor.v1alpha.AtomOuterClass.Atom(this);
+        io.treactor.v1alpha.AtomOuterClass.Atom result =
+            new io.treactor.v1alpha.AtomOuterClass.Atom(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.number_ = number_;
@@ -606,38 +613,41 @@ public final class AtomOuterClass {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.treactor.v1alpha.AtomOuterClass.Atom) {
-          return mergeFrom((io.treactor.v1alpha.AtomOuterClass.Atom)other);
+          return mergeFrom((io.treactor.v1alpha.AtomOuterClass.Atom) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -691,11 +701,13 @@ public final class AtomOuterClass {
         }
         return this;
       }
+
       private int bitField0_;
 
-      private int number_ ;
+      private int number_;
       /**
        * <code>int32 number = 1;</code>
+       *
        * @return The number.
        */
       @java.lang.Override
@@ -704,21 +716,23 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 number = 1;</code>
+       *
        * @param value The number to set.
        * @return This builder for chaining.
        */
       public Builder setNumber(int value) {
-        
+
         number_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>int32 number = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearNumber() {
-        
+
         number_ = 0;
         onChanged();
         return this;
@@ -727,13 +741,13 @@ public final class AtomOuterClass {
       private java.lang.Object symbol_ = "";
       /**
        * <code>string symbol = 2;</code>
+       *
        * @return The symbol.
        */
       public java.lang.String getSymbol() {
         java.lang.Object ref = symbol_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           symbol_ = s;
           return s;
@@ -743,15 +757,14 @@ public final class AtomOuterClass {
       }
       /**
        * <code>string symbol = 2;</code>
+       *
        * @return The bytes for symbol.
        */
-      public com.google.protobuf.ByteString
-          getSymbolBytes() {
+      public com.google.protobuf.ByteString getSymbolBytes() {
         java.lang.Object ref = symbol_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           symbol_ = b;
           return b;
         } else {
@@ -760,41 +773,42 @@ public final class AtomOuterClass {
       }
       /**
        * <code>string symbol = 2;</code>
+       *
        * @param value The symbol to set.
        * @return This builder for chaining.
        */
-      public Builder setSymbol(
-          java.lang.String value) {
+      public Builder setSymbol(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         symbol_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string symbol = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSymbol() {
-        
+
         symbol_ = getDefaultInstance().getSymbol();
         onChanged();
         return this;
       }
       /**
        * <code>string symbol = 2;</code>
+       *
        * @param value The bytes for symbol to set.
        * @return This builder for chaining.
        */
-      public Builder setSymbolBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setSymbolBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         symbol_ = value;
         onChanged();
         return this;
@@ -803,13 +817,13 @@ public final class AtomOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 3;</code>
+       *
        * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
@@ -819,15 +833,14 @@ public final class AtomOuterClass {
       }
       /**
        * <code>string name = 3;</code>
+       *
        * @return The bytes for name.
        */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
+      public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -836,49 +849,51 @@ public final class AtomOuterClass {
       }
       /**
        * <code>string name = 3;</code>
+       *
        * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
-          java.lang.String value) {
+      public Builder setName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         name_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string name = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
        * <code>string name = 3;</code>
+       *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         name_ = value;
         onChanged();
         return this;
       }
 
-      private int period_ ;
+      private int period_;
       /**
        * <code>int32 period = 4;</code>
+       *
        * @return Whether the period field is set.
        */
       @java.lang.Override
@@ -887,6 +902,7 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 period = 4;</code>
+       *
        * @return The period.
        */
       @java.lang.Override
@@ -895,6 +911,7 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 period = 4;</code>
+       *
        * @param value The period to set.
        * @return This builder for chaining.
        */
@@ -906,6 +923,7 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 period = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPeriod() {
@@ -915,9 +933,10 @@ public final class AtomOuterClass {
         return this;
       }
 
-      private int group_ ;
+      private int group_;
       /**
        * <code>int32 group = 5;</code>
+       *
        * @return Whether the group field is set.
        */
       @java.lang.Override
@@ -926,6 +945,7 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 group = 5;</code>
+       *
        * @return The group.
        */
       @java.lang.Override
@@ -934,6 +954,7 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 group = 5;</code>
+       *
        * @param value The group to set.
        * @return This builder for chaining.
        */
@@ -945,6 +966,7 @@ public final class AtomOuterClass {
       }
       /**
        * <code>int32 group = 5;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearGroup() {
@@ -953,6 +975,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -965,12 +988,12 @@ public final class AtomOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:Atom)
     }
 
     // @@protoc_insertion_point(class_scope:Atom)
     private static final io.treactor.v1alpha.AtomOuterClass.Atom DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.treactor.v1alpha.AtomOuterClass.Atom();
     }
@@ -979,16 +1002,16 @@ public final class AtomOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Atom>
-        PARSER = new com.google.protobuf.AbstractParser<Atom>() {
-      @java.lang.Override
-      public Atom parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Atom(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Atom> PARSER =
+        new com.google.protobuf.AbstractParser<Atom>() {
+          @java.lang.Override
+          public Atom parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Atom(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Atom> parser() {
       return PARSER;
@@ -1003,40 +1026,37 @@ public final class AtomOuterClass {
     public io.treactor.v1alpha.AtomOuterClass.Atom getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Atom_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  private static final com.google.protobuf.Descriptors.Descriptor internal_static_Atom_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Atom_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n\036io/treactor/v1alpha/atom.proto\"r\n\004Atom" +
-      "\022\016\n\006number\030\001 \001(\005\022\016\n\006symbol\030\002 \001(\t\022\014\n\004name" +
-      "\030\003 \001(\t\022\023\n\006period\030\004 \001(\005H\000\210\001\001\022\022\n\005group\030\005 \001" +
-      "(\005H\001\210\001\001B\t\n\007_periodB\010\n\006_groupB5\n\023io.treac" +
-      "tor.v1alphaZ\036io/treactor/v1alpha;treacto" +
-      "rpbb\006proto3"
+      "\n\036io/treactor/v1alpha/atom.proto\"r\n\004Atom"
+          + "\022\016\n\006number\030\001 \001(\005\022\016\n\006symbol\030\002 \001(\t\022\014\n\004name"
+          + "\030\003 \001(\t\022\023\n\006period\030\004 \001(\005H\000\210\001\001\022\022\n\005group\030\005 \001"
+          + "(\005H\001\210\001\001B\t\n\007_periodB\010\n\006_groupB5\n\023io.treac"
+          + "tor.v1alphaZ\036io/treactor/v1alpha;treacto"
+          + "rpbb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_Atom_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_Atom_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Atom_descriptor,
-        new java.lang.String[] { "Number", "Symbol", "Name", "Period", "Group", "Period", "Group", });
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    internal_static_Atom_descriptor = getDescriptor().getMessageTypes().get(0);
+    internal_static_Atom_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_Atom_descriptor,
+            new java.lang.String[] {
+              "Number", "Symbol", "Name", "Period", "Group", "Period", "Group",
+            });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

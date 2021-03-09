@@ -1,8 +1,10 @@
 package io.treactor.springboot;
 
-import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.treactor.springboot.Elements.Element;
 import io.treactor.v1alpha.AtomOuterClass.Atom;
 import io.treactor.v1alpha.NodeOuterClass.Node;
@@ -27,28 +29,29 @@ public class ApiController {
 
   @Autowired
   public ApiController() {
-    tracer = OpenTelemetry.getGlobalTracer("treactor");
+    TracerProvider tracerProvider = GlobalOpenTelemetry.getTracerProvider();
+    tracer = tracerProvider.get("io.treactor.tracing.java", "0.5");
   }
 
-  @GetMapping("/split")
-  public String split(Model model) {
+  @GetMapping("/reactions")
+  public String reaction(Model model) {
     Span span =
-        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(Span.Kind.INTERNAL).startSpan();
-    span.addEvent("Done sleeping for 500");
+        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(SpanKind.INTERNAL).startSpan();
+    span.addEvent("Log line");
     span.end();
     return "{}";
   }
 
-  @GetMapping("/orbit")
+  @GetMapping("/bonds")
   public String orbit(Model model) {
     Span span =
-        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(Span.Kind.INTERNAL).startSpan();
-    span.addEvent("Done sleeping for 500");
+        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(SpanKind.INTERNAL).startSpan();
+    span.addEvent("Log line");
     span.end();
     return "{}";
   }
 
-  @GetMapping("/atom/{atom}")
+  @GetMapping("/atoms/{atom}")
   public Node atom(
       @RequestHeader MultiValueMap<String, String> headers,
       Model model,
@@ -56,13 +59,8 @@ public class ApiController {
       @RequestParam("symbol") String symbol) {
     Config config = Config.instance;
     Span span =
-        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(Span.Kind.INTERNAL).startSpan();
-    try {
-      Thread.sleep(500);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    span.addEvent("Done sleeping for 500");
+        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(SpanKind.INTERNAL).startSpan();
+    span.addEvent("Log line");
     span.end();
 
     Element element = Elements.instance().bySymbol(symbol);
@@ -90,8 +88,8 @@ public class ApiController {
     return result.build();
   }
 
-  @GetMapping("/about/{number}")
-  public Node about(
+  @GetMapping("/nodes/{number}/info")
+  public Node node(
       @RequestHeader MultiValueMap<String, String> headers,
       Model model,
       @PathVariable("number") String number) {
@@ -120,5 +118,15 @@ public class ApiController {
                     .setPeriod(element.period)
                     .build());
     return result.build();
+  }
+
+  @GetMapping("/nodes/{number}/health")
+  public String health() {
+    return "";
+  }
+
+  @GetMapping("/healthz")
+  public String healthz() {
+    return "";
   }
 }

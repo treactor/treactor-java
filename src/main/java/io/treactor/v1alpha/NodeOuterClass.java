@@ -5,93 +5,71 @@ package io.treactor.v1alpha;
 
 public final class NodeOuterClass {
   private NodeOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface TReactorRequestOrBuilder extends
+  public interface TReactorRequestOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:TReactorRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string path = 1;</code>
+     *
      * @return The path.
      */
     java.lang.String getPath();
     /**
      * <code>string path = 1;</code>
+     *
      * @return The bytes for path.
      */
-    com.google.protobuf.ByteString
-        getPathBytes();
+    com.google.protobuf.ByteString getPathBytes();
 
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     int getHeadersCount();
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-    boolean containsHeaders(
-        java.lang.String key);
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    boolean containsHeaders(java.lang.String key);
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeaders();
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeadersMap();
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-
-    java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-
-    java.lang.String getHeadersOrThrow(
-        java.lang.String key);
+    java.util.Map<java.lang.String, java.lang.String> getHeaders();
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    java.lang.String getHeadersOrThrow(java.lang.String key);
   }
-  /**
-   * Protobuf type {@code TReactorRequest}
-   */
-  public static final class TReactorRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code TReactorRequest} */
+  public static final class TReactorRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:TReactorRequest)
       TReactorRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TReactorRequest.newBuilder() to construct.
     private TReactorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TReactorRequest() {
       path_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TReactorRequest();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TReactorRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -111,73 +89,76 @@ public final class NodeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              path_ = s;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                headers_ = com.google.protobuf.MapField.newMapField(
-                    HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                path_ = s;
+                break;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              headers__ = input.readMessage(
-                  HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              headers_.getMutableMap().put(
-                  headers__.getKey(), headers__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 34:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  headers_ =
+                      com.google.protobuf.MapField.newMapField(
+                          HeadersDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+                    input.readMessage(
+                        HeadersDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                headers_.getMutableMap().put(headers__.getKey(), headers__.getValue());
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorRequest_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.class, io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder.class);
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.class,
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder.class);
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
     private volatile java.lang.Object path_;
     /**
      * <code>string path = 1;</code>
+     *
      * @return The path.
      */
     @java.lang.Override
@@ -186,8 +167,7 @@ public final class NodeOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         path_ = s;
         return s;
@@ -195,16 +175,15 @@ public final class NodeOuterClass {
     }
     /**
      * <code>string path = 1;</code>
+     *
      * @return The bytes for path.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPathBytes() {
+    public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         path_ = b;
         return b;
       } else {
@@ -213,24 +192,23 @@ public final class NodeOuterClass {
     }
 
     public static final int HEADERS_FIELD_NUMBER = 4;
+
     private static final class HeadersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorRequest_HeadersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              io.treactor.v1alpha.NodeOuterClass
+                  .internal_static_TReactorRequest_HeadersEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
       if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       return headers_;
     }
@@ -238,55 +216,42 @@ public final class NodeOuterClass {
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetHeaders().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-
     public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+    public java.lang.String getHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -294,6 +259,7 @@ public final class NodeOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -305,17 +271,12 @@ public final class NodeOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetHeaders(),
-          HeadersDefaultEntryHolder.defaultEntry,
-          4);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 4);
       unknownFields.writeTo(output);
     }
 
@@ -328,15 +289,15 @@ public final class NodeOuterClass {
       if (!getPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetHeaders().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, headers__);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetHeaders().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+            HeadersDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, headers__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,17 +307,16 @@ public final class NodeOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.treactor.v1alpha.NodeOuterClass.TReactorRequest)) {
         return super.equals(obj);
       }
-      io.treactor.v1alpha.NodeOuterClass.TReactorRequest other = (io.treactor.v1alpha.NodeOuterClass.TReactorRequest) obj;
+      io.treactor.v1alpha.NodeOuterClass.TReactorRequest other =
+          (io.treactor.v1alpha.NodeOuterClass.TReactorRequest) obj;
 
-      if (!getPath()
-          .equals(other.getPath())) return false;
-      if (!internalGetHeaders().equals(
-          other.internalGetHeaders())) return false;
+      if (!getPath().equals(other.getPath())) return false;
+      if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -380,87 +340,93 @@ public final class NodeOuterClass {
     }
 
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseDelimitedFrom(java.io.InputStream input)
+
+    public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.treactor.v1alpha.NodeOuterClass.TReactorRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -469,46 +435,43 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code TReactorRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code TReactorRequest} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:TReactorRequest)
         io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorRequest_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
         switch (number) {
           case 4:
             return internalGetHeaders();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
         switch (number) {
           case 4:
             return internalGetMutableHeaders();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.treactor.v1alpha.NodeOuterClass.TReactorRequest.class, io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder.class);
+                io.treactor.v1alpha.NodeOuterClass.TReactorRequest.class,
+                io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder.class);
       }
 
       // Construct using io.treactor.v1alpha.NodeOuterClass.TReactorRequest.newBuilder()
@@ -516,16 +479,15 @@ public final class NodeOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -536,8 +498,7 @@ public final class NodeOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorRequest_descriptor;
       }
 
@@ -557,7 +518,8 @@ public final class NodeOuterClass {
 
       @java.lang.Override
       public io.treactor.v1alpha.NodeOuterClass.TReactorRequest buildPartial() {
-        io.treactor.v1alpha.NodeOuterClass.TReactorRequest result = new io.treactor.v1alpha.NodeOuterClass.TReactorRequest(this);
+        io.treactor.v1alpha.NodeOuterClass.TReactorRequest result =
+            new io.treactor.v1alpha.NodeOuterClass.TReactorRequest(this);
         int from_bitField0_ = bitField0_;
         result.path_ = path_;
         result.headers_ = internalGetHeaders();
@@ -570,38 +532,41 @@ public final class NodeOuterClass {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.treactor.v1alpha.NodeOuterClass.TReactorRequest) {
-          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.TReactorRequest)other);
+          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.TReactorRequest) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -609,13 +574,13 @@ public final class NodeOuterClass {
       }
 
       public Builder mergeFrom(io.treactor.v1alpha.NodeOuterClass.TReactorRequest other) {
-        if (other == io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance()) return this;
+        if (other == io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance())
+          return this;
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
           onChanged();
         }
-        internalGetMutableHeaders().mergeFrom(
-            other.internalGetHeaders());
+        internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -635,7 +600,8 @@ public final class NodeOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.treactor.v1alpha.NodeOuterClass.TReactorRequest) e.getUnfinishedMessage();
+          parsedMessage =
+              (io.treactor.v1alpha.NodeOuterClass.TReactorRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -644,18 +610,19 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.lang.Object path_ = "";
       /**
        * <code>string path = 1;</code>
+       *
        * @return The path.
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           path_ = s;
           return s;
@@ -665,15 +632,14 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string path = 1;</code>
+       *
        * @return The bytes for path.
        */
-      public com.google.protobuf.ByteString
-          getPathBytes() {
+      public com.google.protobuf.ByteString getPathBytes() {
         java.lang.Object ref = path_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           path_ = b;
           return b;
         } else {
@@ -682,62 +648,64 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string path = 1;</code>
+       *
        * @param value The path to set.
        * @return This builder for chaining.
        */
-      public Builder setPath(
-          java.lang.String value) {
+      public Builder setPath(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         path_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string path = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-        
+
         path_ = getDefaultInstance().getPath();
         onChanged();
         return this;
       }
       /**
        * <code>string path = 1;</code>
+       *
        * @param value The bytes for path to set.
        * @return This builder for chaining.
        */
-      public Builder setPathBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         path_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> headers_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetHeaders() {
+          internalGetHeaders() {
         if (headers_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
+          return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
         }
         return headers_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableHeaders() {
-        onChanged();;
+          internalGetMutableHeaders() {
+        onChanged();
+        ;
         if (headers_ == null) {
-          headers_ = com.google.protobuf.MapField.newMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
+          headers_ =
+              com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
         }
         if (!headers_.isMutable()) {
           headers_ = headers_.copy();
@@ -748,55 +716,42 @@ public final class NodeOuterClass {
       public int getHeadersCount() {
         return internalGetHeaders().getMap().size();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
-
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-      public boolean containsHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+      public boolean containsHeaders(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
         return internalGetHeaders().getMap().containsKey(key);
       }
-      /**
-       * Use {@link #getHeadersMap()} instead.
-       */
+      /** Use {@link #getHeadersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
         return getHeadersMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-
       public java.lang.String getHeadersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
+          java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-
-      public java.lang.String getHeadersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
+      public java.lang.String getHeadersOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -804,51 +759,39 @@ public final class NodeOuterClass {
       }
 
       public Builder clearHeaders() {
-        internalGetMutableHeaders().getMutableMap()
-            .clear();
+        internalGetMutableHeaders().getMutableMap().clear();
         return this;
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
-
-      public Builder removeHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .remove(key);
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
+      public Builder removeHeaders(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableHeaders().getMutableMap().remove(key);
         return this;
       }
-      /**
-       * Use alternate mutation accessors instead.
-       */
+      /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableHeaders() {
+      public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
         return internalGetMutableHeaders().getMutableMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
-      public Builder putHeaders(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .put(key, value);
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
+      public Builder putHeaders(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableHeaders().getMutableMap().put(key, value);
         return this;
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
+      public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableHeaders().getMutableMap().putAll(values);
+        return this;
+      }
 
-      public Builder putAllHeaders(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableHeaders().getMutableMap()
-            .putAll(values);
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -861,12 +804,12 @@ public final class NodeOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:TReactorRequest)
     }
 
     // @@protoc_insertion_point(class_scope:TReactorRequest)
     private static final io.treactor.v1alpha.NodeOuterClass.TReactorRequest DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.treactor.v1alpha.NodeOuterClass.TReactorRequest();
     }
@@ -875,16 +818,16 @@ public final class NodeOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TReactorRequest>
-        PARSER = new com.google.protobuf.AbstractParser<TReactorRequest>() {
-      @java.lang.Override
-      public TReactorRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TReactorRequest(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TReactorRequest> PARSER =
+        new com.google.protobuf.AbstractParser<TReactorRequest>() {
+          @java.lang.Override
+          public TReactorRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TReactorRequest(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TReactorRequest> parser() {
       return PARSER;
@@ -899,93 +842,73 @@ public final class NodeOuterClass {
     public io.treactor.v1alpha.NodeOuterClass.TReactorRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface TReactorResponseOrBuilder extends
+  public interface TReactorResponseOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:TReactorResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int32 status_code = 1;</code>
+     *
      * @return The statusCode.
      */
     int getStatusCode();
 
     /**
      * <code>string status_message = 2;</code>
+     *
      * @return The statusMessage.
      */
     java.lang.String getStatusMessage();
     /**
      * <code>string status_message = 2;</code>
+     *
      * @return The bytes for statusMessage.
      */
-    com.google.protobuf.ByteString
-        getStatusMessageBytes();
+    com.google.protobuf.ByteString getStatusMessageBytes();
 
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     int getHeadersCount();
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-    boolean containsHeaders(
-        java.lang.String key);
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    boolean containsHeaders(java.lang.String key);
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeaders();
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeadersMap();
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-
-    java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-
-    java.lang.String getHeadersOrThrow(
-        java.lang.String key);
+    java.util.Map<java.lang.String, java.lang.String> getHeaders();
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
+    java.lang.String getHeadersOrThrow(java.lang.String key);
   }
-  /**
-   * Protobuf type {@code TReactorResponse}
-   */
-  public static final class TReactorResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code TReactorResponse} */
+  public static final class TReactorResponse extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:TReactorResponse)
       TReactorResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TReactorResponse.newBuilder() to construct.
     private TReactorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TReactorResponse() {
       statusMessage_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TReactorResponse();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TReactorResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1005,78 +928,81 @@ public final class NodeOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              statusCode_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              statusMessage_ = s;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                headers_ = com.google.protobuf.MapField.newMapField(
-                    HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+            case 8:
+              {
+                statusCode_ = input.readInt32();
+                break;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              headers__ = input.readMessage(
-                  HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              headers_.getMutableMap().put(
-                  headers__.getKey(), headers__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                statusMessage_ = s;
+                break;
               }
-              break;
-            }
+            case 34:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  headers_ =
+                      com.google.protobuf.MapField.newMapField(
+                          HeadersDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+                    input.readMessage(
+                        HeadersDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                headers_.getMutableMap().put(headers__.getKey(), headers__.getValue());
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorResponse_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.class, io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder.class);
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.class,
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder.class);
     }
 
     public static final int STATUS_CODE_FIELD_NUMBER = 1;
     private int statusCode_;
     /**
      * <code>int32 status_code = 1;</code>
+     *
      * @return The statusCode.
      */
     @java.lang.Override
@@ -1088,6 +1014,7 @@ public final class NodeOuterClass {
     private volatile java.lang.Object statusMessage_;
     /**
      * <code>string status_message = 2;</code>
+     *
      * @return The statusMessage.
      */
     @java.lang.Override
@@ -1096,8 +1023,7 @@ public final class NodeOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         statusMessage_ = s;
         return s;
@@ -1105,16 +1031,15 @@ public final class NodeOuterClass {
     }
     /**
      * <code>string status_message = 2;</code>
+     *
      * @return The bytes for statusMessage.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         statusMessage_ = b;
         return b;
       } else {
@@ -1123,24 +1048,23 @@ public final class NodeOuterClass {
     }
 
     public static final int HEADERS_FIELD_NUMBER = 4;
+
     private static final class HeadersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorResponse_HeadersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              io.treactor.v1alpha.NodeOuterClass
+                  .internal_static_TReactorResponse_HeadersEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
       if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       return headers_;
     }
@@ -1148,55 +1072,42 @@ public final class NodeOuterClass {
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
-
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetHeaders().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-
     public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-    /**
-     * <code>map&lt;string, string&gt; headers = 4;</code>
-     */
+    /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+    public java.lang.String getHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1204,6 +1115,7 @@ public final class NodeOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1215,20 +1127,15 @@ public final class NodeOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (statusCode_ != 0) {
         output.writeInt32(1, statusCode_);
       }
       if (!getStatusMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, statusMessage_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetHeaders(),
-          HeadersDefaultEntryHolder.defaultEntry,
-          4);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 4);
       unknownFields.writeTo(output);
     }
 
@@ -1239,21 +1146,20 @@ public final class NodeOuterClass {
 
       size = 0;
       if (statusCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, statusCode_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, statusCode_);
       }
       if (!getStatusMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, statusMessage_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetHeaders().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, headers__);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetHeaders().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+            HeadersDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, headers__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1263,19 +1169,17 @@ public final class NodeOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.treactor.v1alpha.NodeOuterClass.TReactorResponse)) {
         return super.equals(obj);
       }
-      io.treactor.v1alpha.NodeOuterClass.TReactorResponse other = (io.treactor.v1alpha.NodeOuterClass.TReactorResponse) obj;
+      io.treactor.v1alpha.NodeOuterClass.TReactorResponse other =
+          (io.treactor.v1alpha.NodeOuterClass.TReactorResponse) obj;
 
-      if (getStatusCode()
-          != other.getStatusCode()) return false;
-      if (!getStatusMessage()
-          .equals(other.getStatusMessage())) return false;
-      if (!internalGetHeaders().equals(
-          other.internalGetHeaders())) return false;
+      if (getStatusCode() != other.getStatusCode()) return false;
+      if (!getStatusMessage().equals(other.getStatusMessage())) return false;
+      if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1301,87 +1205,94 @@ public final class NodeOuterClass {
     }
 
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseDelimitedFrom(java.io.InputStream input)
+
+    public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.TReactorResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.treactor.v1alpha.NodeOuterClass.TReactorResponse prototype) {
+
+    public static Builder newBuilder(
+        io.treactor.v1alpha.NodeOuterClass.TReactorResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1390,46 +1301,44 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code TReactorResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code TReactorResponse} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:TReactorResponse)
         io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorResponse_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
         switch (number) {
           case 4:
             return internalGetHeaders();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
         switch (number) {
           case 4:
             return internalGetMutableHeaders();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorResponse_fieldAccessorTable
+        return io.treactor.v1alpha.NodeOuterClass
+            .internal_static_TReactorResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.treactor.v1alpha.NodeOuterClass.TReactorResponse.class, io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder.class);
+                io.treactor.v1alpha.NodeOuterClass.TReactorResponse.class,
+                io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder.class);
       }
 
       // Construct using io.treactor.v1alpha.NodeOuterClass.TReactorResponse.newBuilder()
@@ -1437,16 +1346,15 @@ public final class NodeOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1459,8 +1367,7 @@ public final class NodeOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_TReactorResponse_descriptor;
       }
 
@@ -1480,7 +1387,8 @@ public final class NodeOuterClass {
 
       @java.lang.Override
       public io.treactor.v1alpha.NodeOuterClass.TReactorResponse buildPartial() {
-        io.treactor.v1alpha.NodeOuterClass.TReactorResponse result = new io.treactor.v1alpha.NodeOuterClass.TReactorResponse(this);
+        io.treactor.v1alpha.NodeOuterClass.TReactorResponse result =
+            new io.treactor.v1alpha.NodeOuterClass.TReactorResponse(this);
         int from_bitField0_ = bitField0_;
         result.statusCode_ = statusCode_;
         result.statusMessage_ = statusMessage_;
@@ -1494,38 +1402,41 @@ public final class NodeOuterClass {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.treactor.v1alpha.NodeOuterClass.TReactorResponse) {
-          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.TReactorResponse)other);
+          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.TReactorResponse) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1533,7 +1444,8 @@ public final class NodeOuterClass {
       }
 
       public Builder mergeFrom(io.treactor.v1alpha.NodeOuterClass.TReactorResponse other) {
-        if (other == io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance()) return this;
+        if (other == io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance())
+          return this;
         if (other.getStatusCode() != 0) {
           setStatusCode(other.getStatusCode());
         }
@@ -1541,8 +1453,7 @@ public final class NodeOuterClass {
           statusMessage_ = other.statusMessage_;
           onChanged();
         }
-        internalGetMutableHeaders().mergeFrom(
-            other.internalGetHeaders());
+        internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1562,7 +1473,8 @@ public final class NodeOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.treactor.v1alpha.NodeOuterClass.TReactorResponse) e.getUnfinishedMessage();
+          parsedMessage =
+              (io.treactor.v1alpha.NodeOuterClass.TReactorResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1571,11 +1483,13 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       private int bitField0_;
 
-      private int statusCode_ ;
+      private int statusCode_;
       /**
        * <code>int32 status_code = 1;</code>
+       *
        * @return The statusCode.
        */
       @java.lang.Override
@@ -1584,21 +1498,23 @@ public final class NodeOuterClass {
       }
       /**
        * <code>int32 status_code = 1;</code>
+       *
        * @param value The statusCode to set.
        * @return This builder for chaining.
        */
       public Builder setStatusCode(int value) {
-        
+
         statusCode_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>int32 status_code = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearStatusCode() {
-        
+
         statusCode_ = 0;
         onChanged();
         return this;
@@ -1607,13 +1523,13 @@ public final class NodeOuterClass {
       private java.lang.Object statusMessage_ = "";
       /**
        * <code>string status_message = 2;</code>
+       *
        * @return The statusMessage.
        */
       public java.lang.String getStatusMessage() {
         java.lang.Object ref = statusMessage_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           statusMessage_ = s;
           return s;
@@ -1623,15 +1539,14 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string status_message = 2;</code>
+       *
        * @return The bytes for statusMessage.
        */
-      public com.google.protobuf.ByteString
-          getStatusMessageBytes() {
+      public com.google.protobuf.ByteString getStatusMessageBytes() {
         java.lang.Object ref = statusMessage_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           statusMessage_ = b;
           return b;
         } else {
@@ -1640,62 +1555,64 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string status_message = 2;</code>
+       *
        * @param value The statusMessage to set.
        * @return This builder for chaining.
        */
-      public Builder setStatusMessage(
-          java.lang.String value) {
+      public Builder setStatusMessage(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         statusMessage_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string status_message = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearStatusMessage() {
-        
+
         statusMessage_ = getDefaultInstance().getStatusMessage();
         onChanged();
         return this;
       }
       /**
        * <code>string status_message = 2;</code>
+       *
        * @param value The bytes for statusMessage to set.
        * @return This builder for chaining.
        */
-      public Builder setStatusMessageBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         statusMessage_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> headers_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetHeaders() {
+          internalGetHeaders() {
         if (headers_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
+          return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
         }
         return headers_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableHeaders() {
-        onChanged();;
+          internalGetMutableHeaders() {
+        onChanged();
+        ;
         if (headers_ == null) {
-          headers_ = com.google.protobuf.MapField.newMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
+          headers_ =
+              com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
         }
         if (!headers_.isMutable()) {
           headers_ = headers_.copy();
@@ -1706,55 +1623,42 @@ public final class NodeOuterClass {
       public int getHeadersCount() {
         return internalGetHeaders().getMap().size();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
-
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-      public boolean containsHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+      public boolean containsHeaders(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
         return internalGetHeaders().getMap().containsKey(key);
       }
-      /**
-       * Use {@link #getHeadersMap()} instead.
-       */
+      /** Use {@link #getHeadersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
         return getHeadersMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-
       public java.lang.String getHeadersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
+          java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
-
-      public java.lang.String getHeadersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
+      public java.lang.String getHeadersOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -1762,51 +1666,39 @@ public final class NodeOuterClass {
       }
 
       public Builder clearHeaders() {
-        internalGetMutableHeaders().getMutableMap()
-            .clear();
+        internalGetMutableHeaders().getMutableMap().clear();
         return this;
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
-
-      public Builder removeHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .remove(key);
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
+      public Builder removeHeaders(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableHeaders().getMutableMap().remove(key);
         return this;
       }
-      /**
-       * Use alternate mutation accessors instead.
-       */
+      /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableHeaders() {
+      public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
         return internalGetMutableHeaders().getMutableMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
-      public Builder putHeaders(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .put(key, value);
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
+      public Builder putHeaders(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableHeaders().getMutableMap().put(key, value);
         return this;
       }
-      /**
-       * <code>map&lt;string, string&gt; headers = 4;</code>
-       */
+      /** <code>map&lt;string, string&gt; headers = 4;</code> */
+      public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableHeaders().getMutableMap().putAll(values);
+        return this;
+      }
 
-      public Builder putAllHeaders(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableHeaders().getMutableMap()
-            .putAll(values);
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1819,12 +1711,12 @@ public final class NodeOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:TReactorResponse)
     }
 
     // @@protoc_insertion_point(class_scope:TReactorResponse)
     private static final io.treactor.v1alpha.NodeOuterClass.TReactorResponse DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.treactor.v1alpha.NodeOuterClass.TReactorResponse();
     }
@@ -1833,16 +1725,16 @@ public final class NodeOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TReactorResponse>
-        PARSER = new com.google.protobuf.AbstractParser<TReactorResponse>() {
-      @java.lang.Override
-      public TReactorResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TReactorResponse(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TReactorResponse> PARSER =
+        new com.google.protobuf.AbstractParser<TReactorResponse>() {
+          @java.lang.Override
+          public TReactorResponse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TReactorResponse(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TReactorResponse> parser() {
       return PARSER;
@@ -1857,70 +1749,67 @@ public final class NodeOuterClass {
     public io.treactor.v1alpha.NodeOuterClass.TReactorResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface BondOrBuilder extends
+  public interface BondOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:Bond)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>.TReactorResponse response = 1;</code>
+     *
      * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
      * <code>.TReactorResponse response = 1;</code>
+     *
      * @return The response.
      */
     io.treactor.v1alpha.NodeOuterClass.TReactorResponse getResponse();
-    /**
-     * <code>.TReactorResponse response = 1;</code>
-     */
+    /** <code>.TReactorResponse response = 1;</code> */
     io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>.Node node = 2;</code>
+     *
      * @return Whether the node field is set.
      */
     boolean hasNode();
     /**
      * <code>.Node node = 2;</code>
+     *
      * @return The node.
      */
     io.treactor.v1alpha.NodeOuterClass.Node getNode();
-    /**
-     * <code>.Node node = 2;</code>
-     */
+    /** <code>.Node node = 2;</code> */
     io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder getNodeOrBuilder();
   }
-  /**
-   * Protobuf type {@code Bond}
-   */
-  public static final class Bond extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code Bond} */
+  public static final class Bond extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:Bond)
       BondOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Bond.newBuilder() to construct.
     private Bond(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Bond() {
-    }
+
+    private Bond() {}
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Bond();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Bond(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1939,53 +1828,59 @@ public final class NodeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder subBuilder = null;
-              if (response_ != null) {
-                subBuilder = response_.toBuilder();
-              }
-              response_ = input.readMessage(io.treactor.v1alpha.NodeOuterClass.TReactorResponse.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(response_);
-                response_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder subBuilder = null;
+                if (response_ != null) {
+                  subBuilder = response_.toBuilder();
+                }
+                response_ =
+                    input.readMessage(
+                        io.treactor.v1alpha.NodeOuterClass.TReactorResponse.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(response_);
+                  response_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 18: {
-              io.treactor.v1alpha.NodeOuterClass.Node.Builder subBuilder = null;
-              if (node_ != null) {
-                subBuilder = node_.toBuilder();
+                break;
               }
-              node_ = input.readMessage(io.treactor.v1alpha.NodeOuterClass.Node.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(node_);
-                node_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                io.treactor.v1alpha.NodeOuterClass.Node.Builder subBuilder = null;
+                if (node_ != null) {
+                  subBuilder = node_.toBuilder();
+                }
+                node_ =
+                    input.readMessage(
+                        io.treactor.v1alpha.NodeOuterClass.Node.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(node_);
+                  node_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_Bond_descriptor;
     }
 
@@ -1994,13 +1889,15 @@ public final class NodeOuterClass {
         internalGetFieldAccessorTable() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_Bond_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.treactor.v1alpha.NodeOuterClass.Bond.class, io.treactor.v1alpha.NodeOuterClass.Bond.Builder.class);
+              io.treactor.v1alpha.NodeOuterClass.Bond.class,
+              io.treactor.v1alpha.NodeOuterClass.Bond.Builder.class);
     }
 
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private io.treactor.v1alpha.NodeOuterClass.TReactorResponse response_;
     /**
      * <code>.TReactorResponse response = 1;</code>
+     *
      * @return Whether the response field is set.
      */
     @java.lang.Override
@@ -2009,15 +1906,16 @@ public final class NodeOuterClass {
     }
     /**
      * <code>.TReactorResponse response = 1;</code>
+     *
      * @return The response.
      */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.TReactorResponse getResponse() {
-      return response_ == null ? io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance() : response_;
+      return response_ == null
+          ? io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance()
+          : response_;
     }
-    /**
-     * <code>.TReactorResponse response = 1;</code>
-     */
+    /** <code>.TReactorResponse response = 1;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder getResponseOrBuilder() {
       return getResponse();
@@ -2027,6 +1925,7 @@ public final class NodeOuterClass {
     private io.treactor.v1alpha.NodeOuterClass.Node node_;
     /**
      * <code>.Node node = 2;</code>
+     *
      * @return Whether the node field is set.
      */
     @java.lang.Override
@@ -2035,21 +1934,21 @@ public final class NodeOuterClass {
     }
     /**
      * <code>.Node node = 2;</code>
+     *
      * @return The node.
      */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.Node getNode() {
       return node_ == null ? io.treactor.v1alpha.NodeOuterClass.Node.getDefaultInstance() : node_;
     }
-    /**
-     * <code>.Node node = 2;</code>
-     */
+    /** <code>.Node node = 2;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder getNodeOrBuilder() {
       return getNode();
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2061,8 +1960,7 @@ public final class NodeOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
@@ -2079,12 +1977,10 @@ public final class NodeOuterClass {
 
       size = 0;
       if (response_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getResponse());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getResponse());
       }
       if (node_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getNode());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNode());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2094,7 +1990,7 @@ public final class NodeOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.treactor.v1alpha.NodeOuterClass.Bond)) {
         return super.equals(obj);
@@ -2103,13 +1999,11 @@ public final class NodeOuterClass {
 
       if (hasResponse() != other.hasResponse()) return false;
       if (hasResponse()) {
-        if (!getResponse()
-            .equals(other.getResponse())) return false;
+        if (!getResponse().equals(other.getResponse())) return false;
       }
       if (hasNode() != other.hasNode()) return false;
       if (hasNode()) {
-        if (!getNode()
-            .equals(other.getNode())) return false;
+        if (!getNode().equals(other.getNode())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2135,88 +2029,94 @@ public final class NodeOuterClass {
       return hash;
     }
 
-    public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.treactor.v1alpha.NodeOuterClass.Bond parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.treactor.v1alpha.NodeOuterClass.Bond parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Bond parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.treactor.v1alpha.NodeOuterClass.Bond prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2225,15 +2125,13 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code Bond}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code Bond} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:Bond)
         io.treactor.v1alpha.NodeOuterClass.BondOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_Bond_descriptor;
       }
 
@@ -2242,7 +2140,8 @@ public final class NodeOuterClass {
           internalGetFieldAccessorTable() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_Bond_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.treactor.v1alpha.NodeOuterClass.Bond.class, io.treactor.v1alpha.NodeOuterClass.Bond.Builder.class);
+                io.treactor.v1alpha.NodeOuterClass.Bond.class,
+                io.treactor.v1alpha.NodeOuterClass.Bond.Builder.class);
       }
 
       // Construct using io.treactor.v1alpha.NodeOuterClass.Bond.newBuilder()
@@ -2250,16 +2149,15 @@ public final class NodeOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2279,8 +2177,7 @@ public final class NodeOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_Bond_descriptor;
       }
 
@@ -2300,7 +2197,8 @@ public final class NodeOuterClass {
 
       @java.lang.Override
       public io.treactor.v1alpha.NodeOuterClass.Bond buildPartial() {
-        io.treactor.v1alpha.NodeOuterClass.Bond result = new io.treactor.v1alpha.NodeOuterClass.Bond(this);
+        io.treactor.v1alpha.NodeOuterClass.Bond result =
+            new io.treactor.v1alpha.NodeOuterClass.Bond(this);
         if (responseBuilder_ == null) {
           result.response_ = response_;
         } else {
@@ -2319,38 +2217,41 @@ public final class NodeOuterClass {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.treactor.v1alpha.NodeOuterClass.Bond) {
-          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.Bond)other);
+          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.Bond) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2396,9 +2297,13 @@ public final class NodeOuterClass {
 
       private io.treactor.v1alpha.NodeOuterClass.TReactorResponse response_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.TReactorResponse, io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder, io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder> responseBuilder_;
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponse,
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder,
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder>
+          responseBuilder_;
       /**
        * <code>.TReactorResponse response = 1;</code>
+       *
        * @return Whether the response field is set.
        */
       public boolean hasResponse() {
@@ -2406,18 +2311,19 @@ public final class NodeOuterClass {
       }
       /**
        * <code>.TReactorResponse response = 1;</code>
+       *
        * @return The response.
        */
       public io.treactor.v1alpha.NodeOuterClass.TReactorResponse getResponse() {
         if (responseBuilder_ == null) {
-          return response_ == null ? io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance() : response_;
+          return response_ == null
+              ? io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance()
+              : response_;
         } else {
           return responseBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       public Builder setResponse(io.treactor.v1alpha.NodeOuterClass.TReactorResponse value) {
         if (responseBuilder_ == null) {
           if (value == null) {
@@ -2431,9 +2337,7 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       public Builder setResponse(
           io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder builderForValue) {
         if (responseBuilder_ == null) {
@@ -2445,14 +2349,14 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       public Builder mergeResponse(io.treactor.v1alpha.NodeOuterClass.TReactorResponse value) {
         if (responseBuilder_ == null) {
           if (response_ != null) {
             response_ =
-              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.newBuilder(response_).mergeFrom(value).buildPartial();
+                io.treactor.v1alpha.NodeOuterClass.TReactorResponse.newBuilder(response_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             response_ = value;
           }
@@ -2463,9 +2367,7 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
           response_ = null;
@@ -2477,37 +2379,35 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder getResponseBuilder() {
-        
+
         onChanged();
         return getResponseFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
           return responseBuilder_.getMessageOrBuilder();
         } else {
-          return response_ == null ?
-              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance() : response_;
+          return response_ == null
+              ? io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance()
+              : response_;
         }
       }
-      /**
-       * <code>.TReactorResponse response = 1;</code>
-       */
+      /** <code>.TReactorResponse response = 1;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.TReactorResponse, io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder, io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder> 
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponse,
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder,
+              io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder>
           getResponseFieldBuilder() {
         if (responseBuilder_ == null) {
-          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.treactor.v1alpha.NodeOuterClass.TReactorResponse, io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder, io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder>(
-                  getResponse(),
-                  getParentForChildren(),
-                  isClean());
+          responseBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  io.treactor.v1alpha.NodeOuterClass.TReactorResponse,
+                  io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder,
+                  io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder>(
+                  getResponse(), getParentForChildren(), isClean());
           response_ = null;
         }
         return responseBuilder_;
@@ -2515,9 +2415,13 @@ public final class NodeOuterClass {
 
       private io.treactor.v1alpha.NodeOuterClass.Node node_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.Node, io.treactor.v1alpha.NodeOuterClass.Node.Builder, io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder> nodeBuilder_;
+              io.treactor.v1alpha.NodeOuterClass.Node,
+              io.treactor.v1alpha.NodeOuterClass.Node.Builder,
+              io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder>
+          nodeBuilder_;
       /**
        * <code>.Node node = 2;</code>
+       *
        * @return Whether the node field is set.
        */
       public boolean hasNode() {
@@ -2525,18 +2429,19 @@ public final class NodeOuterClass {
       }
       /**
        * <code>.Node node = 2;</code>
+       *
        * @return The node.
        */
       public io.treactor.v1alpha.NodeOuterClass.Node getNode() {
         if (nodeBuilder_ == null) {
-          return node_ == null ? io.treactor.v1alpha.NodeOuterClass.Node.getDefaultInstance() : node_;
+          return node_ == null
+              ? io.treactor.v1alpha.NodeOuterClass.Node.getDefaultInstance()
+              : node_;
         } else {
           return nodeBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
+      /** <code>.Node node = 2;</code> */
       public Builder setNode(io.treactor.v1alpha.NodeOuterClass.Node value) {
         if (nodeBuilder_ == null) {
           if (value == null) {
@@ -2550,11 +2455,8 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
-      public Builder setNode(
-          io.treactor.v1alpha.NodeOuterClass.Node.Builder builderForValue) {
+      /** <code>.Node node = 2;</code> */
+      public Builder setNode(io.treactor.v1alpha.NodeOuterClass.Node.Builder builderForValue) {
         if (nodeBuilder_ == null) {
           node_ = builderForValue.build();
           onChanged();
@@ -2564,14 +2466,14 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
+      /** <code>.Node node = 2;</code> */
       public Builder mergeNode(io.treactor.v1alpha.NodeOuterClass.Node value) {
         if (nodeBuilder_ == null) {
           if (node_ != null) {
             node_ =
-              io.treactor.v1alpha.NodeOuterClass.Node.newBuilder(node_).mergeFrom(value).buildPartial();
+                io.treactor.v1alpha.NodeOuterClass.Node.newBuilder(node_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             node_ = value;
           }
@@ -2582,9 +2484,7 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
+      /** <code>.Node node = 2;</code> */
       public Builder clearNode() {
         if (nodeBuilder_ == null) {
           node_ = null;
@@ -2596,41 +2496,40 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
+      /** <code>.Node node = 2;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Node.Builder getNodeBuilder() {
-        
+
         onChanged();
         return getNodeFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
+      /** <code>.Node node = 2;</code> */
       public io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder getNodeOrBuilder() {
         if (nodeBuilder_ != null) {
           return nodeBuilder_.getMessageOrBuilder();
         } else {
-          return node_ == null ?
-              io.treactor.v1alpha.NodeOuterClass.Node.getDefaultInstance() : node_;
+          return node_ == null
+              ? io.treactor.v1alpha.NodeOuterClass.Node.getDefaultInstance()
+              : node_;
         }
       }
-      /**
-       * <code>.Node node = 2;</code>
-       */
+      /** <code>.Node node = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.Node, io.treactor.v1alpha.NodeOuterClass.Node.Builder, io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder> 
+              io.treactor.v1alpha.NodeOuterClass.Node,
+              io.treactor.v1alpha.NodeOuterClass.Node.Builder,
+              io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder>
           getNodeFieldBuilder() {
         if (nodeBuilder_ == null) {
-          nodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.treactor.v1alpha.NodeOuterClass.Node, io.treactor.v1alpha.NodeOuterClass.Node.Builder, io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder>(
-                  getNode(),
-                  getParentForChildren(),
-                  isClean());
+          nodeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  io.treactor.v1alpha.NodeOuterClass.Node,
+                  io.treactor.v1alpha.NodeOuterClass.Node.Builder,
+                  io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder>(
+                  getNode(), getParentForChildren(), isClean());
           node_ = null;
         }
         return nodeBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2643,12 +2542,12 @@ public final class NodeOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:Bond)
     }
 
     // @@protoc_insertion_point(class_scope:Bond)
     private static final io.treactor.v1alpha.NodeOuterClass.Bond DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.treactor.v1alpha.NodeOuterClass.Bond();
     }
@@ -2657,16 +2556,16 @@ public final class NodeOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Bond>
-        PARSER = new com.google.protobuf.AbstractParser<Bond>() {
-      @java.lang.Override
-      public Bond parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Bond(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Bond> PARSER =
+        new com.google.protobuf.AbstractParser<Bond>() {
+          @java.lang.Override
+          public Bond parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Bond(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Bond> parser() {
       return PARSER;
@@ -2681,115 +2580,105 @@ public final class NodeOuterClass {
     public io.treactor.v1alpha.NodeOuterClass.Bond getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface NodeOrBuilder extends
+  public interface NodeOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:Node)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string name = 1;</code>
+     *
      * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     *
      * @return The bytes for name.
      */
-    com.google.protobuf.ByteString
-        getNameBytes();
+    com.google.protobuf.ByteString getNameBytes();
 
     /**
      * <code>string version = 2;</code>
+     *
      * @return The version.
      */
     java.lang.String getVersion();
     /**
      * <code>string version = 2;</code>
+     *
      * @return The bytes for version.
      */
-    com.google.protobuf.ByteString
-        getVersionBytes();
+    com.google.protobuf.ByteString getVersionBytes();
 
     /**
      * <code>string framework = 3;</code>
+     *
      * @return The framework.
      */
     java.lang.String getFramework();
     /**
      * <code>string framework = 3;</code>
+     *
      * @return The bytes for framework.
      */
-    com.google.protobuf.ByteString
-        getFrameworkBytes();
+    com.google.protobuf.ByteString getFrameworkBytes();
 
     /**
      * <code>.TReactorRequest request = 4;</code>
+     *
      * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
      * <code>.TReactorRequest request = 4;</code>
+     *
      * @return The request.
      */
     io.treactor.v1alpha.NodeOuterClass.TReactorRequest getRequest();
-    /**
-     * <code>.TReactorRequest request = 4;</code>
-     */
+    /** <code>.TReactorRequest request = 4;</code> */
     io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder getRequestOrBuilder();
 
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
-    java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> 
-        getBondsList();
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
+    java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> getBondsList();
+    /** <code>repeated .Bond bonds = 5;</code> */
     io.treactor.v1alpha.NodeOuterClass.Bond getBonds(int index);
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
     int getBondsCount();
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
-    java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder> 
+    /** <code>repeated .Bond bonds = 5;</code> */
+    java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
         getBondsOrBuilderList();
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
-    io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(
-        int index);
+    /** <code>repeated .Bond bonds = 5;</code> */
+    io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(int index);
 
     /**
      * <code>.Atom atom = 6;</code>
+     *
      * @return Whether the atom field is set.
      */
     boolean hasAtom();
     /**
      * <code>.Atom atom = 6;</code>
+     *
      * @return The atom.
      */
     io.treactor.v1alpha.AtomOuterClass.Atom getAtom();
-    /**
-     * <code>.Atom atom = 6;</code>
-     */
+    /** <code>.Atom atom = 6;</code> */
     io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder getAtomOrBuilder();
   }
-  /**
-   * Protobuf type {@code Node}
-   */
-  public static final class Node extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code Node} */
+  public static final class Node extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:Node)
       NodeOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Node.newBuilder() to construct.
     private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Node() {
       name_ = "";
       version_ = "";
@@ -2799,16 +2688,15 @@ public final class NodeOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Node();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Node(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2828,73 +2716,84 @@ public final class NodeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+                name_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              version_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+                version_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              framework_ = s;
-              break;
-            }
-            case 34: {
-              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder subBuilder = null;
-              if (request_ != null) {
-                subBuilder = request_.toBuilder();
+                framework_ = s;
+                break;
               }
-              request_ = input.readMessage(io.treactor.v1alpha.NodeOuterClass.TReactorRequest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(request_);
-                request_ = subBuilder.buildPartial();
-              }
+            case 34:
+              {
+                io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder subBuilder = null;
+                if (request_ != null) {
+                  subBuilder = request_.toBuilder();
+                }
+                request_ =
+                    input.readMessage(
+                        io.treactor.v1alpha.NodeOuterClass.TReactorRequest.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(request_);
+                  request_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bonds_ = new java.util.ArrayList<io.treactor.v1alpha.NodeOuterClass.Bond>();
-                mutable_bitField0_ |= 0x00000001;
+                break;
               }
-              bonds_.add(
-                  input.readMessage(io.treactor.v1alpha.NodeOuterClass.Bond.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              io.treactor.v1alpha.AtomOuterClass.Atom.Builder subBuilder = null;
-              if (atom_ != null) {
-                subBuilder = atom_.toBuilder();
+            case 42:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  bonds_ = new java.util.ArrayList<io.treactor.v1alpha.NodeOuterClass.Bond>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                bonds_.add(
+                    input.readMessage(
+                        io.treactor.v1alpha.NodeOuterClass.Bond.parser(), extensionRegistry));
+                break;
               }
-              atom_ = input.readMessage(io.treactor.v1alpha.AtomOuterClass.Atom.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(atom_);
-                atom_ = subBuilder.buildPartial();
-              }
+            case 50:
+              {
+                io.treactor.v1alpha.AtomOuterClass.Atom.Builder subBuilder = null;
+                if (atom_ != null) {
+                  subBuilder = atom_.toBuilder();
+                }
+                atom_ =
+                    input.readMessage(
+                        io.treactor.v1alpha.AtomOuterClass.Atom.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(atom_);
+                  atom_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           bonds_ = java.util.Collections.unmodifiableList(bonds_);
@@ -2903,8 +2802,8 @@ public final class NodeOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_Node_descriptor;
     }
 
@@ -2913,13 +2812,15 @@ public final class NodeOuterClass {
         internalGetFieldAccessorTable() {
       return io.treactor.v1alpha.NodeOuterClass.internal_static_Node_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.treactor.v1alpha.NodeOuterClass.Node.class, io.treactor.v1alpha.NodeOuterClass.Node.Builder.class);
+              io.treactor.v1alpha.NodeOuterClass.Node.class,
+              io.treactor.v1alpha.NodeOuterClass.Node.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     *
      * @return The name.
      */
     @java.lang.Override
@@ -2928,8 +2829,7 @@ public final class NodeOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -2937,16 +2837,15 @@ public final class NodeOuterClass {
     }
     /**
      * <code>string name = 1;</code>
+     *
      * @return The bytes for name.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -2958,6 +2857,7 @@ public final class NodeOuterClass {
     private volatile java.lang.Object version_;
     /**
      * <code>string version = 2;</code>
+     *
      * @return The version.
      */
     @java.lang.Override
@@ -2966,8 +2866,7 @@ public final class NodeOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         version_ = s;
         return s;
@@ -2975,16 +2874,15 @@ public final class NodeOuterClass {
     }
     /**
      * <code>string version = 2;</code>
+     *
      * @return The bytes for version.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
+    public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         version_ = b;
         return b;
       } else {
@@ -2996,6 +2894,7 @@ public final class NodeOuterClass {
     private volatile java.lang.Object framework_;
     /**
      * <code>string framework = 3;</code>
+     *
      * @return The framework.
      */
     @java.lang.Override
@@ -3004,8 +2903,7 @@ public final class NodeOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         framework_ = s;
         return s;
@@ -3013,16 +2911,15 @@ public final class NodeOuterClass {
     }
     /**
      * <code>string framework = 3;</code>
+     *
      * @return The bytes for framework.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFrameworkBytes() {
+    public com.google.protobuf.ByteString getFrameworkBytes() {
       java.lang.Object ref = framework_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         framework_ = b;
         return b;
       } else {
@@ -3034,6 +2931,7 @@ public final class NodeOuterClass {
     private io.treactor.v1alpha.NodeOuterClass.TReactorRequest request_;
     /**
      * <code>.TReactorRequest request = 4;</code>
+     *
      * @return Whether the request field is set.
      */
     @java.lang.Override
@@ -3042,15 +2940,16 @@ public final class NodeOuterClass {
     }
     /**
      * <code>.TReactorRequest request = 4;</code>
+     *
      * @return The request.
      */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.TReactorRequest getRequest() {
-      return request_ == null ? io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance() : request_;
+      return request_ == null
+          ? io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance()
+          : request_;
     }
-    /**
-     * <code>.TReactorRequest request = 4;</code>
-     */
+    /** <code>.TReactorRequest request = 4;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
@@ -3058,41 +2957,30 @@ public final class NodeOuterClass {
 
     public static final int BONDS_FIELD_NUMBER = 5;
     private java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> bonds_;
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> getBondsList() {
       return bonds_;
     }
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
-    public java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder> 
+    public java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
         getBondsOrBuilderList() {
       return bonds_;
     }
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public int getBondsCount() {
       return bonds_.size();
     }
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.Bond getBonds(int index) {
       return bonds_.get(index);
     }
-    /**
-     * <code>repeated .Bond bonds = 5;</code>
-     */
+    /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
-    public io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(
-        int index) {
+    public io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(int index) {
       return bonds_.get(index);
     }
 
@@ -3100,6 +2988,7 @@ public final class NodeOuterClass {
     private io.treactor.v1alpha.AtomOuterClass.Atom atom_;
     /**
      * <code>.Atom atom = 6;</code>
+     *
      * @return Whether the atom field is set.
      */
     @java.lang.Override
@@ -3108,21 +2997,21 @@ public final class NodeOuterClass {
     }
     /**
      * <code>.Atom atom = 6;</code>
+     *
      * @return The atom.
      */
     @java.lang.Override
     public io.treactor.v1alpha.AtomOuterClass.Atom getAtom() {
       return atom_ == null ? io.treactor.v1alpha.AtomOuterClass.Atom.getDefaultInstance() : atom_;
     }
-    /**
-     * <code>.Atom atom = 6;</code>
-     */
+    /** <code>.Atom atom = 6;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder getAtomOrBuilder() {
       return getAtom();
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3134,8 +3023,7 @@ public final class NodeOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
@@ -3173,16 +3061,13 @@ public final class NodeOuterClass {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, framework_);
       }
       if (request_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getRequest());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRequest());
       }
       for (int i = 0; i < bonds_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, bonds_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, bonds_.get(i));
       }
       if (atom_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getAtom());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getAtom());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3192,30 +3077,24 @@ public final class NodeOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.treactor.v1alpha.NodeOuterClass.Node)) {
         return super.equals(obj);
       }
       io.treactor.v1alpha.NodeOuterClass.Node other = (io.treactor.v1alpha.NodeOuterClass.Node) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getFramework()
-          .equals(other.getFramework())) return false;
+      if (!getName().equals(other.getName())) return false;
+      if (!getVersion().equals(other.getVersion())) return false;
+      if (!getFramework().equals(other.getFramework())) return false;
       if (hasRequest() != other.hasRequest()) return false;
       if (hasRequest()) {
-        if (!getRequest()
-            .equals(other.getRequest())) return false;
+        if (!getRequest().equals(other.getRequest())) return false;
       }
-      if (!getBondsList()
-          .equals(other.getBondsList())) return false;
+      if (!getBondsList().equals(other.getBondsList())) return false;
       if (hasAtom() != other.hasAtom()) return false;
       if (hasAtom()) {
-        if (!getAtom()
-            .equals(other.getAtom())) return false;
+        if (!getAtom().equals(other.getAtom())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3251,88 +3130,94 @@ public final class NodeOuterClass {
       return hash;
     }
 
-    public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.treactor.v1alpha.NodeOuterClass.Node parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.treactor.v1alpha.NodeOuterClass.Node parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.treactor.v1alpha.NodeOuterClass.Node parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.treactor.v1alpha.NodeOuterClass.Node prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -3341,15 +3226,13 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code Node}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code Node} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:Node)
         io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_Node_descriptor;
       }
 
@@ -3358,7 +3241,8 @@ public final class NodeOuterClass {
           internalGetFieldAccessorTable() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_Node_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.treactor.v1alpha.NodeOuterClass.Node.class, io.treactor.v1alpha.NodeOuterClass.Node.Builder.class);
+                io.treactor.v1alpha.NodeOuterClass.Node.class,
+                io.treactor.v1alpha.NodeOuterClass.Node.Builder.class);
       }
 
       // Construct using io.treactor.v1alpha.NodeOuterClass.Node.newBuilder()
@@ -3366,17 +3250,17 @@ public final class NodeOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getBondsFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -3408,8 +3292,7 @@ public final class NodeOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return io.treactor.v1alpha.NodeOuterClass.internal_static_Node_descriptor;
       }
 
@@ -3429,7 +3312,8 @@ public final class NodeOuterClass {
 
       @java.lang.Override
       public io.treactor.v1alpha.NodeOuterClass.Node buildPartial() {
-        io.treactor.v1alpha.NodeOuterClass.Node result = new io.treactor.v1alpha.NodeOuterClass.Node(this);
+        io.treactor.v1alpha.NodeOuterClass.Node result =
+            new io.treactor.v1alpha.NodeOuterClass.Node(this);
         int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.version_ = version_;
@@ -3461,38 +3345,41 @@ public final class NodeOuterClass {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.treactor.v1alpha.NodeOuterClass.Node) {
-          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.Node)other);
+          return mergeFrom((io.treactor.v1alpha.NodeOuterClass.Node) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -3534,9 +3421,10 @@ public final class NodeOuterClass {
               bondsBuilder_ = null;
               bonds_ = other.bonds_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              bondsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBondsFieldBuilder() : null;
+              bondsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getBondsFieldBuilder()
+                      : null;
             } else {
               bondsBuilder_.addAllMessages(other.bonds_);
             }
@@ -3573,18 +3461,19 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       *
        * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
@@ -3594,15 +3483,14 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       *
        * @return The bytes for name.
        */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
+      public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -3611,41 +3499,42 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       *
        * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
-          java.lang.String value) {
+      public Builder setName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         name_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string name = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
        * <code>string name = 1;</code>
+       *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         name_ = value;
         onChanged();
         return this;
@@ -3654,13 +3543,13 @@ public final class NodeOuterClass {
       private java.lang.Object version_ = "";
       /**
        * <code>string version = 2;</code>
+       *
        * @return The version.
        */
       public java.lang.String getVersion() {
         java.lang.Object ref = version_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           version_ = s;
           return s;
@@ -3670,15 +3559,14 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string version = 2;</code>
+       *
        * @return The bytes for version.
        */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
+      public com.google.protobuf.ByteString getVersionBytes() {
         java.lang.Object ref = version_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           version_ = b;
           return b;
         } else {
@@ -3687,41 +3575,42 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string version = 2;</code>
+       *
        * @param value The version to set.
        * @return This builder for chaining.
        */
-      public Builder setVersion(
-          java.lang.String value) {
+      public Builder setVersion(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         version_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string version = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-        
+
         version_ = getDefaultInstance().getVersion();
         onChanged();
         return this;
       }
       /**
        * <code>string version = 2;</code>
+       *
        * @param value The bytes for version to set.
        * @return This builder for chaining.
        */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setVersionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         version_ = value;
         onChanged();
         return this;
@@ -3730,13 +3619,13 @@ public final class NodeOuterClass {
       private java.lang.Object framework_ = "";
       /**
        * <code>string framework = 3;</code>
+       *
        * @return The framework.
        */
       public java.lang.String getFramework() {
         java.lang.Object ref = framework_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           framework_ = s;
           return s;
@@ -3746,15 +3635,14 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string framework = 3;</code>
+       *
        * @return The bytes for framework.
        */
-      public com.google.protobuf.ByteString
-          getFrameworkBytes() {
+      public com.google.protobuf.ByteString getFrameworkBytes() {
         java.lang.Object ref = framework_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           framework_ = b;
           return b;
         } else {
@@ -3763,41 +3651,42 @@ public final class NodeOuterClass {
       }
       /**
        * <code>string framework = 3;</code>
+       *
        * @param value The framework to set.
        * @return This builder for chaining.
        */
-      public Builder setFramework(
-          java.lang.String value) {
+      public Builder setFramework(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         framework_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string framework = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearFramework() {
-        
+
         framework_ = getDefaultInstance().getFramework();
         onChanged();
         return this;
       }
       /**
        * <code>string framework = 3;</code>
+       *
        * @param value The bytes for framework to set.
        * @return This builder for chaining.
        */
-      public Builder setFrameworkBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setFrameworkBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         framework_ = value;
         onChanged();
         return this;
@@ -3805,9 +3694,13 @@ public final class NodeOuterClass {
 
       private io.treactor.v1alpha.NodeOuterClass.TReactorRequest request_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.TReactorRequest, io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder, io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder> requestBuilder_;
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequest,
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder,
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder>
+          requestBuilder_;
       /**
        * <code>.TReactorRequest request = 4;</code>
+       *
        * @return Whether the request field is set.
        */
       public boolean hasRequest() {
@@ -3815,18 +3708,19 @@ public final class NodeOuterClass {
       }
       /**
        * <code>.TReactorRequest request = 4;</code>
+       *
        * @return The request.
        */
       public io.treactor.v1alpha.NodeOuterClass.TReactorRequest getRequest() {
         if (requestBuilder_ == null) {
-          return request_ == null ? io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance() : request_;
+          return request_ == null
+              ? io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance()
+              : request_;
         } else {
           return requestBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       public Builder setRequest(io.treactor.v1alpha.NodeOuterClass.TReactorRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
@@ -3840,9 +3734,7 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       public Builder setRequest(
           io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
@@ -3854,14 +3746,14 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       public Builder mergeRequest(io.treactor.v1alpha.NodeOuterClass.TReactorRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.newBuilder(request_).mergeFrom(value).buildPartial();
+                io.treactor.v1alpha.NodeOuterClass.TReactorRequest.newBuilder(request_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             request_ = value;
           }
@@ -3872,9 +3764,7 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
           request_ = null;
@@ -3886,57 +3776,57 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder getRequestBuilder() {
-        
+
         onChanged();
         return getRequestFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
-          return request_ == null ?
-              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance() : request_;
+          return request_ == null
+              ? io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance()
+              : request_;
         }
       }
-      /**
-       * <code>.TReactorRequest request = 4;</code>
-       */
+      /** <code>.TReactorRequest request = 4;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.TReactorRequest, io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder, io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder> 
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequest,
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder,
+              io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
-          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.treactor.v1alpha.NodeOuterClass.TReactorRequest, io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder, io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder>(
-                  getRequest(),
-                  getParentForChildren(),
-                  isClean());
+          requestBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  io.treactor.v1alpha.NodeOuterClass.TReactorRequest,
+                  io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder,
+                  io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder>(
+                  getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
         return requestBuilder_;
       }
 
       private java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> bonds_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureBondsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
           bonds_ = new java.util.ArrayList<io.treactor.v1alpha.NodeOuterClass.Bond>(bonds_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.Bond, io.treactor.v1alpha.NodeOuterClass.Bond.Builder, io.treactor.v1alpha.NodeOuterClass.BondOrBuilder> bondsBuilder_;
+              io.treactor.v1alpha.NodeOuterClass.Bond,
+              io.treactor.v1alpha.NodeOuterClass.Bond.Builder,
+              io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
+          bondsBuilder_;
 
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> getBondsList() {
         if (bondsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(bonds_);
@@ -3944,9 +3834,7 @@ public final class NodeOuterClass {
           return bondsBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public int getBondsCount() {
         if (bondsBuilder_ == null) {
           return bonds_.size();
@@ -3954,9 +3842,7 @@ public final class NodeOuterClass {
           return bondsBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Bond getBonds(int index) {
         if (bondsBuilder_ == null) {
           return bonds_.get(index);
@@ -3964,11 +3850,8 @@ public final class NodeOuterClass {
           return bondsBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public Builder setBonds(
-          int index, io.treactor.v1alpha.NodeOuterClass.Bond value) {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public Builder setBonds(int index, io.treactor.v1alpha.NodeOuterClass.Bond value) {
         if (bondsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3981,9 +3864,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public Builder setBonds(
           int index, io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
         if (bondsBuilder_ == null) {
@@ -3995,9 +3876,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addBonds(io.treactor.v1alpha.NodeOuterClass.Bond value) {
         if (bondsBuilder_ == null) {
           if (value == null) {
@@ -4011,11 +3890,8 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public Builder addBonds(
-          int index, io.treactor.v1alpha.NodeOuterClass.Bond value) {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public Builder addBonds(int index, io.treactor.v1alpha.NodeOuterClass.Bond value) {
         if (bondsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4028,11 +3904,8 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public Builder addBonds(
-          io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public Builder addBonds(io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
         if (bondsBuilder_ == null) {
           ensureBondsIsMutable();
           bonds_.add(builderForValue.build());
@@ -4042,9 +3915,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addBonds(
           int index, io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
         if (bondsBuilder_ == null) {
@@ -4056,24 +3927,19 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addAllBonds(
           java.lang.Iterable<? extends io.treactor.v1alpha.NodeOuterClass.Bond> values) {
         if (bondsBuilder_ == null) {
           ensureBondsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, bonds_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bonds_);
           onChanged();
         } else {
           bondsBuilder_.addAllMessages(values);
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public Builder clearBonds() {
         if (bondsBuilder_ == null) {
           bonds_ = java.util.Collections.emptyList();
@@ -4084,9 +3950,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public Builder removeBonds(int index) {
         if (bondsBuilder_ == null) {
           ensureBondsIsMutable();
@@ -4097,66 +3961,54 @@ public final class NodeOuterClass {
         }
         return this;
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public io.treactor.v1alpha.NodeOuterClass.Bond.Builder getBondsBuilder(
-          int index) {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public io.treactor.v1alpha.NodeOuterClass.Bond.Builder getBondsBuilder(int index) {
         return getBondsFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(
-          int index) {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(int index) {
         if (bondsBuilder_ == null) {
-          return bonds_.get(index);  } else {
+          return bonds_.get(index);
+        } else {
           return bondsBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder> 
-           getBondsOrBuilderList() {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
+          getBondsOrBuilderList() {
         if (bondsBuilder_ != null) {
           return bondsBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(bonds_);
         }
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
+      /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Bond.Builder addBondsBuilder() {
-        return getBondsFieldBuilder().addBuilder(
-            io.treactor.v1alpha.NodeOuterClass.Bond.getDefaultInstance());
+        return getBondsFieldBuilder()
+            .addBuilder(io.treactor.v1alpha.NodeOuterClass.Bond.getDefaultInstance());
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public io.treactor.v1alpha.NodeOuterClass.Bond.Builder addBondsBuilder(
-          int index) {
-        return getBondsFieldBuilder().addBuilder(
-            index, io.treactor.v1alpha.NodeOuterClass.Bond.getDefaultInstance());
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public io.treactor.v1alpha.NodeOuterClass.Bond.Builder addBondsBuilder(int index) {
+        return getBondsFieldBuilder()
+            .addBuilder(index, io.treactor.v1alpha.NodeOuterClass.Bond.getDefaultInstance());
       }
-      /**
-       * <code>repeated .Bond bonds = 5;</code>
-       */
-      public java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond.Builder> 
-           getBondsBuilderList() {
+      /** <code>repeated .Bond bonds = 5;</code> */
+      public java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond.Builder> getBondsBuilderList() {
         return getBondsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.treactor.v1alpha.NodeOuterClass.Bond, io.treactor.v1alpha.NodeOuterClass.Bond.Builder, io.treactor.v1alpha.NodeOuterClass.BondOrBuilder> 
+              io.treactor.v1alpha.NodeOuterClass.Bond,
+              io.treactor.v1alpha.NodeOuterClass.Bond.Builder,
+              io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
           getBondsFieldBuilder() {
         if (bondsBuilder_ == null) {
-          bondsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              io.treactor.v1alpha.NodeOuterClass.Bond, io.treactor.v1alpha.NodeOuterClass.Bond.Builder, io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>(
-                  bonds_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
+          bondsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  io.treactor.v1alpha.NodeOuterClass.Bond,
+                  io.treactor.v1alpha.NodeOuterClass.Bond.Builder,
+                  io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>(
+                  bonds_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           bonds_ = null;
         }
         return bondsBuilder_;
@@ -4164,9 +4016,13 @@ public final class NodeOuterClass {
 
       private io.treactor.v1alpha.AtomOuterClass.Atom atom_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.AtomOuterClass.Atom, io.treactor.v1alpha.AtomOuterClass.Atom.Builder, io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder> atomBuilder_;
+              io.treactor.v1alpha.AtomOuterClass.Atom,
+              io.treactor.v1alpha.AtomOuterClass.Atom.Builder,
+              io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder>
+          atomBuilder_;
       /**
        * <code>.Atom atom = 6;</code>
+       *
        * @return Whether the atom field is set.
        */
       public boolean hasAtom() {
@@ -4174,18 +4030,19 @@ public final class NodeOuterClass {
       }
       /**
        * <code>.Atom atom = 6;</code>
+       *
        * @return The atom.
        */
       public io.treactor.v1alpha.AtomOuterClass.Atom getAtom() {
         if (atomBuilder_ == null) {
-          return atom_ == null ? io.treactor.v1alpha.AtomOuterClass.Atom.getDefaultInstance() : atom_;
+          return atom_ == null
+              ? io.treactor.v1alpha.AtomOuterClass.Atom.getDefaultInstance()
+              : atom_;
         } else {
           return atomBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
+      /** <code>.Atom atom = 6;</code> */
       public Builder setAtom(io.treactor.v1alpha.AtomOuterClass.Atom value) {
         if (atomBuilder_ == null) {
           if (value == null) {
@@ -4199,11 +4056,8 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
-      public Builder setAtom(
-          io.treactor.v1alpha.AtomOuterClass.Atom.Builder builderForValue) {
+      /** <code>.Atom atom = 6;</code> */
+      public Builder setAtom(io.treactor.v1alpha.AtomOuterClass.Atom.Builder builderForValue) {
         if (atomBuilder_ == null) {
           atom_ = builderForValue.build();
           onChanged();
@@ -4213,14 +4067,14 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
+      /** <code>.Atom atom = 6;</code> */
       public Builder mergeAtom(io.treactor.v1alpha.AtomOuterClass.Atom value) {
         if (atomBuilder_ == null) {
           if (atom_ != null) {
             atom_ =
-              io.treactor.v1alpha.AtomOuterClass.Atom.newBuilder(atom_).mergeFrom(value).buildPartial();
+                io.treactor.v1alpha.AtomOuterClass.Atom.newBuilder(atom_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             atom_ = value;
           }
@@ -4231,9 +4085,7 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
+      /** <code>.Atom atom = 6;</code> */
       public Builder clearAtom() {
         if (atomBuilder_ == null) {
           atom_ = null;
@@ -4245,41 +4097,40 @@ public final class NodeOuterClass {
 
         return this;
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
+      /** <code>.Atom atom = 6;</code> */
       public io.treactor.v1alpha.AtomOuterClass.Atom.Builder getAtomBuilder() {
-        
+
         onChanged();
         return getAtomFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
+      /** <code>.Atom atom = 6;</code> */
       public io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder getAtomOrBuilder() {
         if (atomBuilder_ != null) {
           return atomBuilder_.getMessageOrBuilder();
         } else {
-          return atom_ == null ?
-              io.treactor.v1alpha.AtomOuterClass.Atom.getDefaultInstance() : atom_;
+          return atom_ == null
+              ? io.treactor.v1alpha.AtomOuterClass.Atom.getDefaultInstance()
+              : atom_;
         }
       }
-      /**
-       * <code>.Atom atom = 6;</code>
-       */
+      /** <code>.Atom atom = 6;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.treactor.v1alpha.AtomOuterClass.Atom, io.treactor.v1alpha.AtomOuterClass.Atom.Builder, io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder> 
+              io.treactor.v1alpha.AtomOuterClass.Atom,
+              io.treactor.v1alpha.AtomOuterClass.Atom.Builder,
+              io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder>
           getAtomFieldBuilder() {
         if (atomBuilder_ == null) {
-          atomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.treactor.v1alpha.AtomOuterClass.Atom, io.treactor.v1alpha.AtomOuterClass.Atom.Builder, io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder>(
-                  getAtom(),
-                  getParentForChildren(),
-                  isClean());
+          atomBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  io.treactor.v1alpha.AtomOuterClass.Atom,
+                  io.treactor.v1alpha.AtomOuterClass.Atom.Builder,
+                  io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder>(
+                  getAtom(), getParentForChildren(), isClean());
           atom_ = null;
         }
         return atomBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4292,12 +4143,12 @@ public final class NodeOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:Node)
     }
 
     // @@protoc_insertion_point(class_scope:Node)
     private static final io.treactor.v1alpha.NodeOuterClass.Node DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.treactor.v1alpha.NodeOuterClass.Node();
     }
@@ -4306,16 +4157,16 @@ public final class NodeOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Node>
-        PARSER = new com.google.protobuf.AbstractParser<Node>() {
-      @java.lang.Override
-      public Node parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Node(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Node> PARSER =
+        new com.google.protobuf.AbstractParser<Node>() {
+          @java.lang.Override
+          public Node parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Node(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Node> parser() {
       return PARSER;
@@ -4330,106 +4181,106 @@ public final class NodeOuterClass {
     public io.treactor.v1alpha.NodeOuterClass.Node getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TReactorRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TReactorRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TReactorRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TReactorRequest_HeadersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TReactorRequest_HeadersEntry_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TReactorRequest_HeadersEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TReactorResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TReactorResponse_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TReactorResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TReactorResponse_HeadersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TReactorResponse_HeadersEntry_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TReactorResponse_HeadersEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Bond_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  private static final com.google.protobuf.Descriptors.Descriptor internal_static_Bond_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Bond_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Node_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  private static final com.google.protobuf.Descriptors.Descriptor internal_static_Node_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Node_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n\036io/treactor/v1alpha/node.proto\032\036io/tre" +
-      "actor/v1alpha/atom.proto\"\177\n\017TReactorRequ" +
-      "est\022\014\n\004path\030\001 \001(\t\022.\n\007headers\030\004 \003(\0132\035.TRe" +
-      "actorRequest.HeadersEntry\032.\n\014HeadersEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\240\001\n\020TR" +
-      "eactorResponse\022\023\n\013status_code\030\001 \001(\005\022\026\n\016s" +
-      "tatus_message\030\002 \001(\t\022/\n\007headers\030\004 \003(\0132\036.T" +
-      "ReactorResponse.HeadersEntry\032.\n\014HeadersE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"@\n\004" +
-      "Bond\022#\n\010response\030\001 \001(\0132\021.TReactorRespons" +
-      "e\022\023\n\004node\030\002 \001(\0132\005.Node\"\206\001\n\004Node\022\014\n\004name\030" +
-      "\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\021\n\tframework\030\003 \001(" +
-      "\t\022!\n\007request\030\004 \001(\0132\020.TReactorRequest\022\024\n\005" +
-      "bonds\030\005 \003(\0132\005.Bond\022\023\n\004atom\030\006 \001(\0132\005.AtomB" +
-      "5\n\023io.treactor.v1alphaZ\036io/treactor/v1al" +
-      "pha;treactorpbb\006proto3"
+      "\n\036io/treactor/v1alpha/node.proto\032\036io/tre"
+          + "actor/v1alpha/atom.proto\"\177\n\017TReactorRequ"
+          + "est\022\014\n\004path\030\001 \001(\t\022.\n\007headers\030\004 \003(\0132\035.TRe"
+          + "actorRequest.HeadersEntry\032.\n\014HeadersEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\240\001\n\020TR"
+          + "eactorResponse\022\023\n\013status_code\030\001 \001(\005\022\026\n\016s"
+          + "tatus_message\030\002 \001(\t\022/\n\007headers\030\004 \003(\0132\036.T"
+          + "ReactorResponse.HeadersEntry\032.\n\014HeadersE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"@\n\004"
+          + "Bond\022#\n\010response\030\001 \001(\0132\021.TReactorRespons"
+          + "e\022\023\n\004node\030\002 \001(\0132\005.Node\"\206\001\n\004Node\022\014\n\004name\030"
+          + "\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\021\n\tframework\030\003 \001("
+          + "\t\022!\n\007request\030\004 \001(\0132\020.TReactorRequest\022\024\n\005"
+          + "bonds\030\005 \003(\0132\005.Bond\022\023\n\004atom\030\006 \001(\0132\005.AtomB"
+          + "5\n\023io.treactor.v1alphaZ\036io/treactor/v1al"
+          + "pha;treactorpbb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.treactor.v1alpha.AtomOuterClass.getDescriptor(),
-        });
-    internal_static_TReactorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_TReactorRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TReactorRequest_descriptor,
-        new java.lang.String[] { "Path", "Headers", });
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              io.treactor.v1alpha.AtomOuterClass.getDescriptor(),
+            });
+    internal_static_TReactorRequest_descriptor = getDescriptor().getMessageTypes().get(0);
+    internal_static_TReactorRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_TReactorRequest_descriptor,
+            new java.lang.String[] {
+              "Path", "Headers",
+            });
     internal_static_TReactorRequest_HeadersEntry_descriptor =
-      internal_static_TReactorRequest_descriptor.getNestedTypes().get(0);
-    internal_static_TReactorRequest_HeadersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TReactorRequest_HeadersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_TReactorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_TReactorResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TReactorResponse_descriptor,
-        new java.lang.String[] { "StatusCode", "StatusMessage", "Headers", });
+        internal_static_TReactorRequest_descriptor.getNestedTypes().get(0);
+    internal_static_TReactorRequest_HeadersEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_TReactorRequest_HeadersEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_TReactorResponse_descriptor = getDescriptor().getMessageTypes().get(1);
+    internal_static_TReactorResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_TReactorResponse_descriptor,
+            new java.lang.String[] {
+              "StatusCode", "StatusMessage", "Headers",
+            });
     internal_static_TReactorResponse_HeadersEntry_descriptor =
-      internal_static_TReactorResponse_descriptor.getNestedTypes().get(0);
-    internal_static_TReactorResponse_HeadersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TReactorResponse_HeadersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_Bond_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_Bond_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Bond_descriptor,
-        new java.lang.String[] { "Response", "Node", });
-    internal_static_Node_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_Node_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Node_descriptor,
-        new java.lang.String[] { "Name", "Version", "Framework", "Request", "Bonds", "Atom", });
+        internal_static_TReactorResponse_descriptor.getNestedTypes().get(0);
+    internal_static_TReactorResponse_HeadersEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_TReactorResponse_HeadersEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_Bond_descriptor = getDescriptor().getMessageTypes().get(2);
+    internal_static_Bond_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_Bond_descriptor,
+            new java.lang.String[] {
+              "Response", "Node",
+            });
+    internal_static_Node_descriptor = getDescriptor().getMessageTypes().get(3);
+    internal_static_Node_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_Node_descriptor,
+            new java.lang.String[] {
+              "Name", "Version", "Framework", "Request", "Bonds", "Atom",
+            });
     io.treactor.v1alpha.AtomOuterClass.getDescriptor();
   }
 

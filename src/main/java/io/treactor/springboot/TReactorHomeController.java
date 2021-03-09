@@ -1,7 +1,8 @@
 package io.treactor.springboot;
 
-import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.TracerProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,8 @@ public class TReactorHomeController {
 
   @Autowired
   public TReactorHomeController() {
-    tracer = OpenTelemetry.getGlobalTracer("treactor");
+    TracerProvider tracerProvider = GlobalOpenTelemetry.getTracerProvider();
+    tracer = tracerProvider.get("io.treactor.tracing.java", "0.5");
   }
 
   @RequestMapping(method = RequestMethod.GET)
