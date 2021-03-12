@@ -36,16 +36,16 @@ public class ApiController {
   @GetMapping("/reactions")
   public String reaction(Model model) {
     Span span =
-        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(SpanKind.INTERNAL).startSpan();
+        tracer.spanBuilder("reaction").setSpanKind(SpanKind.INTERNAL).startSpan();
     span.addEvent("Log line");
     span.end();
     return "{}";
   }
 
   @GetMapping("/bonds")
-  public String orbit(Model model) {
+  public String bond(Model model) {
     Span span =
-        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(SpanKind.INTERNAL).startSpan();
+        tracer.spanBuilder("bond").setSpanKind(SpanKind.INTERNAL).startSpan();
     span.addEvent("Log line");
     span.end();
     return "{}";
@@ -59,7 +59,7 @@ public class ApiController {
       @RequestParam("symbol") String symbol) {
     Config config = Config.instance;
     Span span =
-        tracer.spanBuilder("Alex was in Spring Boot!").setSpanKind(SpanKind.INTERNAL).startSpan();
+        tracer.spanBuilder("atom").setSpanKind(SpanKind.INTERNAL).startSpan();
     span.addEvent("Log line");
     span.end();
 
