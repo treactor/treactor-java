@@ -23,6 +23,7 @@ public final class NodeOuterClass {
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      * <code>string path = 1;</code>
      *
@@ -32,24 +33,31 @@ public final class NodeOuterClass {
 
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     int getHeadersCount();
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     boolean containsHeaders(java.lang.String key);
+
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getHeaders();
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     java.lang.String getHeadersOrThrow(java.lang.String key);
   }
+
   /** Protobuf type {@code TReactorRequest} */
   public static final class TReactorRequest extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:TReactorRequest)
       TReactorRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TReactorRequest.newBuilder() to construct.
     private TReactorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -156,6 +164,7 @@ public final class NodeOuterClass {
 
     public static final int PATH_FIELD_NUMBER = 1;
     private volatile java.lang.Object path_;
+
     /**
      * <code>string path = 1;</code>
      *
@@ -173,6 +182,7 @@ public final class NodeOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string path = 1;</code>
      *
@@ -216,6 +226,7 @@ public final class NodeOuterClass {
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
@@ -224,17 +235,20 @@ public final class NodeOuterClass {
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
+
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public java.lang.String getHeadersOrDefault(
@@ -245,6 +259,7 @@ public final class NodeOuterClass {
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
@@ -435,6 +450,7 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code TReactorRequest} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -614,6 +630,7 @@ public final class NodeOuterClass {
       private int bitField0_;
 
       private java.lang.Object path_ = "";
+
       /**
        * <code>string path = 1;</code>
        *
@@ -630,6 +647,7 @@ public final class NodeOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string path = 1;</code>
        *
@@ -646,6 +664,7 @@ public final class NodeOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string path = 1;</code>
        *
@@ -661,6 +680,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string path = 1;</code>
        *
@@ -672,6 +692,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string path = 1;</code>
        *
@@ -716,6 +737,7 @@ public final class NodeOuterClass {
       public int getHeadersCount() {
         return internalGetHeaders().getMap().size();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public boolean containsHeaders(java.lang.String key) {
@@ -724,17 +746,20 @@ public final class NodeOuterClass {
         }
         return internalGetHeaders().getMap().containsKey(key);
       }
+
       /** Use {@link #getHeadersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
         return getHeadersMap();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public java.lang.String getHeadersOrDefault(
@@ -745,6 +770,7 @@ public final class NodeOuterClass {
         java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public java.lang.String getHeadersOrThrow(java.lang.String key) {
@@ -762,6 +788,7 @@ public final class NodeOuterClass {
         internalGetMutableHeaders().getMutableMap().clear();
         return this;
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       public Builder removeHeaders(java.lang.String key) {
         if (key == null) {
@@ -770,11 +797,13 @@ public final class NodeOuterClass {
         internalGetMutableHeaders().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
         return internalGetMutableHeaders().getMutableMap();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       public Builder putHeaders(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -786,6 +815,7 @@ public final class NodeOuterClass {
         internalGetMutableHeaders().getMutableMap().put(key, value);
         return this;
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableHeaders().getMutableMap().putAll(values);
@@ -862,6 +892,7 @@ public final class NodeOuterClass {
      * @return The statusMessage.
      */
     java.lang.String getStatusMessage();
+
     /**
      * <code>string status_message = 2;</code>
      *
@@ -871,24 +902,31 @@ public final class NodeOuterClass {
 
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     int getHeadersCount();
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     boolean containsHeaders(java.lang.String key);
+
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getHeaders();
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     java.lang.String getHeadersOrThrow(java.lang.String key);
   }
+
   /** Protobuf type {@code TReactorResponse} */
   public static final class TReactorResponse extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:TReactorResponse)
       TReactorResponseOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TReactorResponse.newBuilder() to construct.
     private TReactorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1000,6 +1038,7 @@ public final class NodeOuterClass {
 
     public static final int STATUS_CODE_FIELD_NUMBER = 1;
     private int statusCode_;
+
     /**
      * <code>int32 status_code = 1;</code>
      *
@@ -1012,6 +1051,7 @@ public final class NodeOuterClass {
 
     public static final int STATUS_MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object statusMessage_;
+
     /**
      * <code>string status_message = 2;</code>
      *
@@ -1029,6 +1069,7 @@ public final class NodeOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string status_message = 2;</code>
      *
@@ -1072,6 +1113,7 @@ public final class NodeOuterClass {
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
@@ -1080,17 +1122,20 @@ public final class NodeOuterClass {
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
+
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public java.lang.String getHeadersOrDefault(
@@ -1101,6 +1146,7 @@ public final class NodeOuterClass {
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /** <code>map&lt;string, string&gt; headers = 4;</code> */
     @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
@@ -1301,6 +1347,7 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code TReactorResponse} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -1487,6 +1534,7 @@ public final class NodeOuterClass {
       private int bitField0_;
 
       private int statusCode_;
+
       /**
        * <code>int32 status_code = 1;</code>
        *
@@ -1496,6 +1544,7 @@ public final class NodeOuterClass {
       public int getStatusCode() {
         return statusCode_;
       }
+
       /**
        * <code>int32 status_code = 1;</code>
        *
@@ -1508,6 +1557,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>int32 status_code = 1;</code>
        *
@@ -1521,6 +1571,7 @@ public final class NodeOuterClass {
       }
 
       private java.lang.Object statusMessage_ = "";
+
       /**
        * <code>string status_message = 2;</code>
        *
@@ -1537,6 +1588,7 @@ public final class NodeOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string status_message = 2;</code>
        *
@@ -1553,6 +1605,7 @@ public final class NodeOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string status_message = 2;</code>
        *
@@ -1568,6 +1621,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string status_message = 2;</code>
        *
@@ -1579,6 +1633,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string status_message = 2;</code>
        *
@@ -1623,6 +1678,7 @@ public final class NodeOuterClass {
       public int getHeadersCount() {
         return internalGetHeaders().getMap().size();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public boolean containsHeaders(java.lang.String key) {
@@ -1631,17 +1687,20 @@ public final class NodeOuterClass {
         }
         return internalGetHeaders().getMap().containsKey(key);
       }
+
       /** Use {@link #getHeadersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
         return getHeadersMap();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public java.lang.String getHeadersOrDefault(
@@ -1652,6 +1711,7 @@ public final class NodeOuterClass {
         java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       @java.lang.Override
       public java.lang.String getHeadersOrThrow(java.lang.String key) {
@@ -1669,6 +1729,7 @@ public final class NodeOuterClass {
         internalGetMutableHeaders().getMutableMap().clear();
         return this;
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       public Builder removeHeaders(java.lang.String key) {
         if (key == null) {
@@ -1677,11 +1738,13 @@ public final class NodeOuterClass {
         internalGetMutableHeaders().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
         return internalGetMutableHeaders().getMutableMap();
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       public Builder putHeaders(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -1693,6 +1756,7 @@ public final class NodeOuterClass {
         internalGetMutableHeaders().getMutableMap().put(key, value);
         return this;
       }
+
       /** <code>map&lt;string, string&gt; headers = 4;</code> */
       public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableHeaders().getMutableMap().putAll(values);
@@ -1762,12 +1826,14 @@ public final class NodeOuterClass {
      * @return Whether the response field is set.
      */
     boolean hasResponse();
+
     /**
      * <code>.TReactorResponse response = 1;</code>
      *
      * @return The response.
      */
     io.treactor.v1alpha.NodeOuterClass.TReactorResponse getResponse();
+
     /** <code>.TReactorResponse response = 1;</code> */
     io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder getResponseOrBuilder();
 
@@ -1777,21 +1843,25 @@ public final class NodeOuterClass {
      * @return Whether the node field is set.
      */
     boolean hasNode();
+
     /**
      * <code>.Node node = 2;</code>
      *
      * @return The node.
      */
     io.treactor.v1alpha.NodeOuterClass.Node getNode();
+
     /** <code>.Node node = 2;</code> */
     io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder getNodeOrBuilder();
   }
+
   /** Protobuf type {@code Bond} */
   public static final class Bond extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:Bond)
       BondOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Bond.newBuilder() to construct.
     private Bond(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1895,6 +1965,7 @@ public final class NodeOuterClass {
 
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private io.treactor.v1alpha.NodeOuterClass.TReactorResponse response_;
+
     /**
      * <code>.TReactorResponse response = 1;</code>
      *
@@ -1904,6 +1975,7 @@ public final class NodeOuterClass {
     public boolean hasResponse() {
       return response_ != null;
     }
+
     /**
      * <code>.TReactorResponse response = 1;</code>
      *
@@ -1915,6 +1987,7 @@ public final class NodeOuterClass {
           ? io.treactor.v1alpha.NodeOuterClass.TReactorResponse.getDefaultInstance()
           : response_;
     }
+
     /** <code>.TReactorResponse response = 1;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder getResponseOrBuilder() {
@@ -1923,6 +1996,7 @@ public final class NodeOuterClass {
 
     public static final int NODE_FIELD_NUMBER = 2;
     private io.treactor.v1alpha.NodeOuterClass.Node node_;
+
     /**
      * <code>.Node node = 2;</code>
      *
@@ -1932,6 +2006,7 @@ public final class NodeOuterClass {
     public boolean hasNode() {
       return node_ != null;
     }
+
     /**
      * <code>.Node node = 2;</code>
      *
@@ -1941,6 +2016,7 @@ public final class NodeOuterClass {
     public io.treactor.v1alpha.NodeOuterClass.Node getNode() {
       return node_ == null ? io.treactor.v1alpha.NodeOuterClass.Node.getDefaultInstance() : node_;
     }
+
     /** <code>.Node node = 2;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder getNodeOrBuilder() {
@@ -2125,6 +2201,7 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code Bond} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -2301,6 +2378,7 @@ public final class NodeOuterClass {
               io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder,
               io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder>
           responseBuilder_;
+
       /**
        * <code>.TReactorResponse response = 1;</code>
        *
@@ -2309,6 +2387,7 @@ public final class NodeOuterClass {
       public boolean hasResponse() {
         return responseBuilder_ != null || response_ != null;
       }
+
       /**
        * <code>.TReactorResponse response = 1;</code>
        *
@@ -2323,6 +2402,7 @@ public final class NodeOuterClass {
           return responseBuilder_.getMessage();
         }
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       public Builder setResponse(io.treactor.v1alpha.NodeOuterClass.TReactorResponse value) {
         if (responseBuilder_ == null) {
@@ -2337,6 +2417,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       public Builder setResponse(
           io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder builderForValue) {
@@ -2349,6 +2430,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       public Builder mergeResponse(io.treactor.v1alpha.NodeOuterClass.TReactorResponse value) {
         if (responseBuilder_ == null) {
@@ -2367,6 +2449,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
@@ -2379,12 +2462,14 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorResponse.Builder getResponseBuilder() {
 
         onChanged();
         return getResponseFieldBuilder().getBuilder();
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
@@ -2395,6 +2480,7 @@ public final class NodeOuterClass {
               : response_;
         }
       }
+
       /** <code>.TReactorResponse response = 1;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.treactor.v1alpha.NodeOuterClass.TReactorResponse,
@@ -2419,6 +2505,7 @@ public final class NodeOuterClass {
               io.treactor.v1alpha.NodeOuterClass.Node.Builder,
               io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder>
           nodeBuilder_;
+
       /**
        * <code>.Node node = 2;</code>
        *
@@ -2427,6 +2514,7 @@ public final class NodeOuterClass {
       public boolean hasNode() {
         return nodeBuilder_ != null || node_ != null;
       }
+
       /**
        * <code>.Node node = 2;</code>
        *
@@ -2441,6 +2529,7 @@ public final class NodeOuterClass {
           return nodeBuilder_.getMessage();
         }
       }
+
       /** <code>.Node node = 2;</code> */
       public Builder setNode(io.treactor.v1alpha.NodeOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -2455,6 +2544,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Node node = 2;</code> */
       public Builder setNode(io.treactor.v1alpha.NodeOuterClass.Node.Builder builderForValue) {
         if (nodeBuilder_ == null) {
@@ -2466,6 +2556,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Node node = 2;</code> */
       public Builder mergeNode(io.treactor.v1alpha.NodeOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -2484,6 +2575,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Node node = 2;</code> */
       public Builder clearNode() {
         if (nodeBuilder_ == null) {
@@ -2496,12 +2588,14 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Node node = 2;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Node.Builder getNodeBuilder() {
 
         onChanged();
         return getNodeFieldBuilder().getBuilder();
       }
+
       /** <code>.Node node = 2;</code> */
       public io.treactor.v1alpha.NodeOuterClass.NodeOrBuilder getNodeOrBuilder() {
         if (nodeBuilder_ != null) {
@@ -2512,6 +2606,7 @@ public final class NodeOuterClass {
               : node_;
         }
       }
+
       /** <code>.Node node = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.treactor.v1alpha.NodeOuterClass.Node,
@@ -2593,6 +2688,7 @@ public final class NodeOuterClass {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      * <code>string name = 1;</code>
      *
@@ -2606,6 +2702,7 @@ public final class NodeOuterClass {
      * @return The version.
      */
     java.lang.String getVersion();
+
     /**
      * <code>string version = 2;</code>
      *
@@ -2619,6 +2716,7 @@ public final class NodeOuterClass {
      * @return The framework.
      */
     java.lang.String getFramework();
+
     /**
      * <code>string framework = 3;</code>
      *
@@ -2632,24 +2730,30 @@ public final class NodeOuterClass {
      * @return Whether the request field is set.
      */
     boolean hasRequest();
+
     /**
      * <code>.TReactorRequest request = 4;</code>
      *
      * @return The request.
      */
     io.treactor.v1alpha.NodeOuterClass.TReactorRequest getRequest();
+
     /** <code>.TReactorRequest request = 4;</code> */
     io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder getRequestOrBuilder();
 
     /** <code>repeated .Bond bonds = 5;</code> */
     java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> getBondsList();
+
     /** <code>repeated .Bond bonds = 5;</code> */
     io.treactor.v1alpha.NodeOuterClass.Bond getBonds(int index);
+
     /** <code>repeated .Bond bonds = 5;</code> */
     int getBondsCount();
+
     /** <code>repeated .Bond bonds = 5;</code> */
     java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
         getBondsOrBuilderList();
+
     /** <code>repeated .Bond bonds = 5;</code> */
     io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(int index);
 
@@ -2659,21 +2763,25 @@ public final class NodeOuterClass {
      * @return Whether the atom field is set.
      */
     boolean hasAtom();
+
     /**
      * <code>.Atom atom = 6;</code>
      *
      * @return The atom.
      */
     io.treactor.v1alpha.AtomOuterClass.Atom getAtom();
+
     /** <code>.Atom atom = 6;</code> */
     io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder getAtomOrBuilder();
   }
+
   /** Protobuf type {@code Node} */
   public static final class Node extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:Node)
       NodeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Node.newBuilder() to construct.
     private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2818,6 +2926,7 @@ public final class NodeOuterClass {
 
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
+
     /**
      * <code>string name = 1;</code>
      *
@@ -2835,6 +2944,7 @@ public final class NodeOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -2855,6 +2965,7 @@ public final class NodeOuterClass {
 
     public static final int VERSION_FIELD_NUMBER = 2;
     private volatile java.lang.Object version_;
+
     /**
      * <code>string version = 2;</code>
      *
@@ -2872,6 +2983,7 @@ public final class NodeOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string version = 2;</code>
      *
@@ -2892,6 +3004,7 @@ public final class NodeOuterClass {
 
     public static final int FRAMEWORK_FIELD_NUMBER = 3;
     private volatile java.lang.Object framework_;
+
     /**
      * <code>string framework = 3;</code>
      *
@@ -2909,6 +3022,7 @@ public final class NodeOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string framework = 3;</code>
      *
@@ -2929,6 +3043,7 @@ public final class NodeOuterClass {
 
     public static final int REQUEST_FIELD_NUMBER = 4;
     private io.treactor.v1alpha.NodeOuterClass.TReactorRequest request_;
+
     /**
      * <code>.TReactorRequest request = 4;</code>
      *
@@ -2938,6 +3053,7 @@ public final class NodeOuterClass {
     public boolean hasRequest() {
       return request_ != null;
     }
+
     /**
      * <code>.TReactorRequest request = 4;</code>
      *
@@ -2949,6 +3065,7 @@ public final class NodeOuterClass {
           ? io.treactor.v1alpha.NodeOuterClass.TReactorRequest.getDefaultInstance()
           : request_;
     }
+
     /** <code>.TReactorRequest request = 4;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder getRequestOrBuilder() {
@@ -2957,27 +3074,32 @@ public final class NodeOuterClass {
 
     public static final int BONDS_FIELD_NUMBER = 5;
     private java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> bonds_;
+
     /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond> getBondsList() {
       return bonds_;
     }
+
     /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
         getBondsOrBuilderList() {
       return bonds_;
     }
+
     /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public int getBondsCount() {
       return bonds_.size();
     }
+
     /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.Bond getBonds(int index) {
       return bonds_.get(index);
     }
+
     /** <code>repeated .Bond bonds = 5;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(int index) {
@@ -2986,6 +3108,7 @@ public final class NodeOuterClass {
 
     public static final int ATOM_FIELD_NUMBER = 6;
     private io.treactor.v1alpha.AtomOuterClass.Atom atom_;
+
     /**
      * <code>.Atom atom = 6;</code>
      *
@@ -2995,6 +3118,7 @@ public final class NodeOuterClass {
     public boolean hasAtom() {
       return atom_ != null;
     }
+
     /**
      * <code>.Atom atom = 6;</code>
      *
@@ -3004,6 +3128,7 @@ public final class NodeOuterClass {
     public io.treactor.v1alpha.AtomOuterClass.Atom getAtom() {
       return atom_ == null ? io.treactor.v1alpha.AtomOuterClass.Atom.getDefaultInstance() : atom_;
     }
+
     /** <code>.Atom atom = 6;</code> */
     @java.lang.Override
     public io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder getAtomOrBuilder() {
@@ -3226,6 +3351,7 @@ public final class NodeOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code Node} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -3465,6 +3591,7 @@ public final class NodeOuterClass {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3481,6 +3608,7 @@ public final class NodeOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3497,6 +3625,7 @@ public final class NodeOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3512,6 +3641,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3523,6 +3653,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3541,6 +3672,7 @@ public final class NodeOuterClass {
       }
 
       private java.lang.Object version_ = "";
+
       /**
        * <code>string version = 2;</code>
        *
@@ -3557,6 +3689,7 @@ public final class NodeOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string version = 2;</code>
        *
@@ -3573,6 +3706,7 @@ public final class NodeOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string version = 2;</code>
        *
@@ -3588,6 +3722,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string version = 2;</code>
        *
@@ -3599,6 +3734,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string version = 2;</code>
        *
@@ -3617,6 +3753,7 @@ public final class NodeOuterClass {
       }
 
       private java.lang.Object framework_ = "";
+
       /**
        * <code>string framework = 3;</code>
        *
@@ -3633,6 +3770,7 @@ public final class NodeOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string framework = 3;</code>
        *
@@ -3649,6 +3787,7 @@ public final class NodeOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string framework = 3;</code>
        *
@@ -3664,6 +3803,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string framework = 3;</code>
        *
@@ -3675,6 +3815,7 @@ public final class NodeOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string framework = 3;</code>
        *
@@ -3698,6 +3839,7 @@ public final class NodeOuterClass {
               io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder,
               io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder>
           requestBuilder_;
+
       /**
        * <code>.TReactorRequest request = 4;</code>
        *
@@ -3706,6 +3848,7 @@ public final class NodeOuterClass {
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
       }
+
       /**
        * <code>.TReactorRequest request = 4;</code>
        *
@@ -3720,6 +3863,7 @@ public final class NodeOuterClass {
           return requestBuilder_.getMessage();
         }
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       public Builder setRequest(io.treactor.v1alpha.NodeOuterClass.TReactorRequest value) {
         if (requestBuilder_ == null) {
@@ -3734,6 +3878,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       public Builder setRequest(
           io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder builderForValue) {
@@ -3746,6 +3891,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       public Builder mergeRequest(io.treactor.v1alpha.NodeOuterClass.TReactorRequest value) {
         if (requestBuilder_ == null) {
@@ -3764,6 +3910,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -3776,12 +3923,14 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       public io.treactor.v1alpha.NodeOuterClass.TReactorRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
@@ -3792,6 +3941,7 @@ public final class NodeOuterClass {
               : request_;
         }
       }
+
       /** <code>.TReactorRequest request = 4;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.treactor.v1alpha.NodeOuterClass.TReactorRequest,
@@ -3834,6 +3984,7 @@ public final class NodeOuterClass {
           return bondsBuilder_.getMessageList();
         }
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public int getBondsCount() {
         if (bondsBuilder_ == null) {
@@ -3842,6 +3993,7 @@ public final class NodeOuterClass {
           return bondsBuilder_.getCount();
         }
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Bond getBonds(int index) {
         if (bondsBuilder_ == null) {
@@ -3850,6 +4002,7 @@ public final class NodeOuterClass {
           return bondsBuilder_.getMessage(index);
         }
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder setBonds(int index, io.treactor.v1alpha.NodeOuterClass.Bond value) {
         if (bondsBuilder_ == null) {
@@ -3864,6 +4017,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder setBonds(
           int index, io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
@@ -3876,6 +4030,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addBonds(io.treactor.v1alpha.NodeOuterClass.Bond value) {
         if (bondsBuilder_ == null) {
@@ -3890,6 +4045,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addBonds(int index, io.treactor.v1alpha.NodeOuterClass.Bond value) {
         if (bondsBuilder_ == null) {
@@ -3904,6 +4060,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addBonds(io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
         if (bondsBuilder_ == null) {
@@ -3915,6 +4072,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addBonds(
           int index, io.treactor.v1alpha.NodeOuterClass.Bond.Builder builderForValue) {
@@ -3927,6 +4085,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder addAllBonds(
           java.lang.Iterable<? extends io.treactor.v1alpha.NodeOuterClass.Bond> values) {
@@ -3939,6 +4098,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder clearBonds() {
         if (bondsBuilder_ == null) {
@@ -3950,6 +4110,7 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public Builder removeBonds(int index) {
         if (bondsBuilder_ == null) {
@@ -3961,10 +4122,12 @@ public final class NodeOuterClass {
         }
         return this;
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Bond.Builder getBondsBuilder(int index) {
         return getBondsFieldBuilder().getBuilder(index);
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.BondOrBuilder getBondsOrBuilder(int index) {
         if (bondsBuilder_ == null) {
@@ -3973,6 +4136,7 @@ public final class NodeOuterClass {
           return bondsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public java.util.List<? extends io.treactor.v1alpha.NodeOuterClass.BondOrBuilder>
           getBondsOrBuilderList() {
@@ -3982,16 +4146,19 @@ public final class NodeOuterClass {
           return java.util.Collections.unmodifiableList(bonds_);
         }
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Bond.Builder addBondsBuilder() {
         return getBondsFieldBuilder()
             .addBuilder(io.treactor.v1alpha.NodeOuterClass.Bond.getDefaultInstance());
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public io.treactor.v1alpha.NodeOuterClass.Bond.Builder addBondsBuilder(int index) {
         return getBondsFieldBuilder()
             .addBuilder(index, io.treactor.v1alpha.NodeOuterClass.Bond.getDefaultInstance());
       }
+
       /** <code>repeated .Bond bonds = 5;</code> */
       public java.util.List<io.treactor.v1alpha.NodeOuterClass.Bond.Builder> getBondsBuilderList() {
         return getBondsFieldBuilder().getBuilderList();
@@ -4020,6 +4187,7 @@ public final class NodeOuterClass {
               io.treactor.v1alpha.AtomOuterClass.Atom.Builder,
               io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder>
           atomBuilder_;
+
       /**
        * <code>.Atom atom = 6;</code>
        *
@@ -4028,6 +4196,7 @@ public final class NodeOuterClass {
       public boolean hasAtom() {
         return atomBuilder_ != null || atom_ != null;
       }
+
       /**
        * <code>.Atom atom = 6;</code>
        *
@@ -4042,6 +4211,7 @@ public final class NodeOuterClass {
           return atomBuilder_.getMessage();
         }
       }
+
       /** <code>.Atom atom = 6;</code> */
       public Builder setAtom(io.treactor.v1alpha.AtomOuterClass.Atom value) {
         if (atomBuilder_ == null) {
@@ -4056,6 +4226,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Atom atom = 6;</code> */
       public Builder setAtom(io.treactor.v1alpha.AtomOuterClass.Atom.Builder builderForValue) {
         if (atomBuilder_ == null) {
@@ -4067,6 +4238,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Atom atom = 6;</code> */
       public Builder mergeAtom(io.treactor.v1alpha.AtomOuterClass.Atom value) {
         if (atomBuilder_ == null) {
@@ -4085,6 +4257,7 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Atom atom = 6;</code> */
       public Builder clearAtom() {
         if (atomBuilder_ == null) {
@@ -4097,12 +4270,14 @@ public final class NodeOuterClass {
 
         return this;
       }
+
       /** <code>.Atom atom = 6;</code> */
       public io.treactor.v1alpha.AtomOuterClass.Atom.Builder getAtomBuilder() {
 
         onChanged();
         return getAtomFieldBuilder().getBuilder();
       }
+
       /** <code>.Atom atom = 6;</code> */
       public io.treactor.v1alpha.AtomOuterClass.AtomOrBuilder getAtomOrBuilder() {
         if (atomBuilder_ != null) {
@@ -4113,6 +4288,7 @@ public final class NodeOuterClass {
               : atom_;
         }
       }
+
       /** <code>.Atom atom = 6;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.treactor.v1alpha.AtomOuterClass.Atom,

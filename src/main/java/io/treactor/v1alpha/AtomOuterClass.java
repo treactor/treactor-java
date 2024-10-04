@@ -30,6 +30,7 @@ public final class AtomOuterClass {
      * @return The symbol.
      */
     java.lang.String getSymbol();
+
     /**
      * <code>string symbol = 2;</code>
      *
@@ -43,6 +44,7 @@ public final class AtomOuterClass {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      * <code>string name = 3;</code>
      *
@@ -56,6 +58,7 @@ public final class AtomOuterClass {
      * @return Whether the period field is set.
      */
     boolean hasPeriod();
+
     /**
      * <code>int32 period = 4;</code>
      *
@@ -69,6 +72,7 @@ public final class AtomOuterClass {
      * @return Whether the group field is set.
      */
     boolean hasGroup();
+
     /**
      * <code>int32 group = 5;</code>
      *
@@ -76,12 +80,14 @@ public final class AtomOuterClass {
      */
     int getGroup();
   }
+
   /** Protobuf type {@code Atom} */
   public static final class Atom extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:Atom)
       AtomOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Atom.newBuilder() to construct.
     private Atom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,6 +194,7 @@ public final class AtomOuterClass {
     private int bitField0_;
     public static final int NUMBER_FIELD_NUMBER = 1;
     private int number_;
+
     /**
      * <code>int32 number = 1;</code>
      *
@@ -200,6 +207,7 @@ public final class AtomOuterClass {
 
     public static final int SYMBOL_FIELD_NUMBER = 2;
     private volatile java.lang.Object symbol_;
+
     /**
      * <code>string symbol = 2;</code>
      *
@@ -217,6 +225,7 @@ public final class AtomOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string symbol = 2;</code>
      *
@@ -237,6 +246,7 @@ public final class AtomOuterClass {
 
     public static final int NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object name_;
+
     /**
      * <code>string name = 3;</code>
      *
@@ -254,6 +264,7 @@ public final class AtomOuterClass {
         return s;
       }
     }
+
     /**
      * <code>string name = 3;</code>
      *
@@ -274,6 +285,7 @@ public final class AtomOuterClass {
 
     public static final int PERIOD_FIELD_NUMBER = 4;
     private int period_;
+
     /**
      * <code>int32 period = 4;</code>
      *
@@ -283,6 +295,7 @@ public final class AtomOuterClass {
     public boolean hasPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>int32 period = 4;</code>
      *
@@ -295,6 +308,7 @@ public final class AtomOuterClass {
 
     public static final int GROUP_FIELD_NUMBER = 5;
     private int group_;
+
     /**
      * <code>int32 group = 5;</code>
      *
@@ -304,6 +318,7 @@ public final class AtomOuterClass {
     public boolean hasGroup() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>int32 group = 5;</code>
      *
@@ -519,6 +534,7 @@ public final class AtomOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code Atom} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -705,6 +721,7 @@ public final class AtomOuterClass {
       private int bitField0_;
 
       private int number_;
+
       /**
        * <code>int32 number = 1;</code>
        *
@@ -714,6 +731,7 @@ public final class AtomOuterClass {
       public int getNumber() {
         return number_;
       }
+
       /**
        * <code>int32 number = 1;</code>
        *
@@ -726,6 +744,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>int32 number = 1;</code>
        *
@@ -739,6 +758,7 @@ public final class AtomOuterClass {
       }
 
       private java.lang.Object symbol_ = "";
+
       /**
        * <code>string symbol = 2;</code>
        *
@@ -755,6 +775,7 @@ public final class AtomOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string symbol = 2;</code>
        *
@@ -771,6 +792,7 @@ public final class AtomOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string symbol = 2;</code>
        *
@@ -786,6 +808,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string symbol = 2;</code>
        *
@@ -797,6 +820,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string symbol = 2;</code>
        *
@@ -815,6 +839,7 @@ public final class AtomOuterClass {
       }
 
       private java.lang.Object name_ = "";
+
       /**
        * <code>string name = 3;</code>
        *
@@ -831,6 +856,7 @@ public final class AtomOuterClass {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string name = 3;</code>
        *
@@ -847,6 +873,7 @@ public final class AtomOuterClass {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string name = 3;</code>
        *
@@ -862,6 +889,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 3;</code>
        *
@@ -873,6 +901,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 3;</code>
        *
@@ -891,6 +920,7 @@ public final class AtomOuterClass {
       }
 
       private int period_;
+
       /**
        * <code>int32 period = 4;</code>
        *
@@ -900,6 +930,7 @@ public final class AtomOuterClass {
       public boolean hasPeriod() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <code>int32 period = 4;</code>
        *
@@ -909,6 +940,7 @@ public final class AtomOuterClass {
       public int getPeriod() {
         return period_;
       }
+
       /**
        * <code>int32 period = 4;</code>
        *
@@ -921,6 +953,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>int32 period = 4;</code>
        *
@@ -934,6 +967,7 @@ public final class AtomOuterClass {
       }
 
       private int group_;
+
       /**
        * <code>int32 group = 5;</code>
        *
@@ -943,6 +977,7 @@ public final class AtomOuterClass {
       public boolean hasGroup() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <code>int32 group = 5;</code>
        *
@@ -952,6 +987,7 @@ public final class AtomOuterClass {
       public int getGroup() {
         return group_;
       }
+
       /**
        * <code>int32 group = 5;</code>
        *
@@ -964,6 +1000,7 @@ public final class AtomOuterClass {
         onChanged();
         return this;
       }
+
       /**
        * <code>int32 group = 5;</code>
        *
